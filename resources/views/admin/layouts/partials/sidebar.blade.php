@@ -187,7 +187,7 @@
             @endcan
 
             @can('view-admin-notification')
-                <li class=" nav-item {{ request()->routeIs('admin.notifications*') ? 'active' : '' }}">
+                <li class=" nav-item {{ request()->routeIs('admin.about*') ? 'active' : '' }}">
                     <a class="d-flex align-items-center" href="{{ route('admin.about.index') }}">
 
                         <i class="fas fa-bell"></i>

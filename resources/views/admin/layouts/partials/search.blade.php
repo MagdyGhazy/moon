@@ -1,6 +1,6 @@
 <div class="col-lg-4 col-md-4 col-sm-12" >
 
-    <label for="">&nbsp;&nbsp;بحث</label>
+    <label for="">بحث</label>
 
     <div class="input-group input-group-merge">
         <input type="text" class="form-control form-control-merge" id="search"

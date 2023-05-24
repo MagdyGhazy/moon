@@ -25,8 +25,7 @@ class AboutController extends Controller
      */
     public function create()
     {
-
-        return view('admin.abouts.cre',compact('abouts'));
+        return view('admin.about.create');
     }
 
     /**
@@ -39,8 +38,11 @@ class AboutController extends Controller
     {
         About::create([
            'title'=> $request->title,
-           'discribtion'=> $request->discribtion,
+           'discription'=> $request->discription,
         ]);
+
+        return redirect()->route('admin.about.index');
+
     }
 
     /**
