@@ -25,6 +25,7 @@ Route::post('/editor/upload/image', [\App\Http\Controllers\EditorJsController::c
 Route::post('/editor/image/fetchUrl', [\App\Http\Controllers\EditorJsController::class,'imageFetchUrl'])->name('editor.image.fetchUrl');
 
 
+
 Route::get('test',function (){
     $p = \App\Models\Paragraph::first();
 

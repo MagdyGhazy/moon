@@ -74,52 +74,30 @@
                                         <tbody>
                                         @foreach($abouts as $about)
                                             <tr>
-                                                <td>
-                                                    {{$about->id}}
-                                                </td>
+                                                <th scope="row">{{$about->id}}</th>
+                                                <td>{{$about->title}}</td>
+                                                <td>{{$about->discription}}</td>
 
                                                 <td>
-                                                    <ul>
-                                                        @foreach(getLangs() as $lang => $config)
-                                                            <li>
-                                                                {{$about->title}}
-                                                            </li>
-                                                        @endforeach
-                                                    </ul>
-                                                </td>
+                                                    <div class="row wow fadeInUp" style="justify-content: right ">
+                                                        <span style="padding-left: 2% ;width: auto">
+                                                               <a class="btn btn-primary" href="{{route('admin.about.edit', $about->id)}}" role="button"><i class="mr-50 fas fa-edit"></i></a>
+                                                        </span>
 
-                                                <td>
-                                                    <ul>
-                                                        @foreach(getLangs() as $lang => $config)
-                                                            @if($about->discription)
-                                                                <li>
-                                                                    {{$about->discription}}
-                                                                </li>
 
-                                                            @else
-                                                                /
-                                                            @endif
-                                                        @endforeach
-                                                    </ul>
-                                                </td>
+                                                        <span>
+                                                    <form action="{{route('admin.about.destroy',$about->id)}}" method="post">
 
-                                                <td>
-                                                    @can('edit-category')
-                                                        <a title="{{__('messages.static.edit')}}"
-                                                           href="{{route('admin.about.edit',$about->id)}}">
-                                                            <i class="mr-50 fas fa-edit"></i>
-                                                        </a>
-                                                    @endcan
-
-                                                    @can('delete-category')
-                                                        <a title="{{__('messages.static.delete')}}"
-                                                           onclick="deleteItem({{$about->id}})" href="{{route('admin.about.destroy',$about->id)}}">
-                                                            <i class="mr-50 fas fa-trash"></i>
-                                                        </a>
-                                                    @endcan
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit"class="btn btn-danger"> <i class="mr-50 fas fa-trash"></i></button>
+                                                    </form>
+                                                        </span>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         @endforeach
+
                                         </tbody>
 
 

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Content;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AboutController extends Controller
 {
@@ -14,7 +17,7 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $abouts = About::all();
+        $abouts = About::get();
         return view('admin.about.aboutindex',compact('abouts'));
 
     }
@@ -62,9 +65,11 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function edit(About $about)
+    public function edit($id)
     {
-        //
+        $about=About::findorfail($id);
+        return view('admin.about.edit',compact('about'));
+
     }
 
     /**
@@ -85,8 +90,13 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function destroy(About $about)
+    public function destroy($id)
     {
-        //
+
+      About::findorfail($id)->delete();
+
+
+        return redirect()->route('admin.about.index');
     }
 }
+
