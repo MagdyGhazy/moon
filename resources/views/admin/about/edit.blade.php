@@ -42,11 +42,7 @@
                     <div class="col-md-6 col-12">
                         <div class="card">
                             <div class="card-header">
-                                <button title="{{ __('messages.static.back') }}"
-                                        onclick="document.location = '{{ url()->previous() }}'" type="button"
-                                        class="btn btn-icon btn-outline-info">
-                                    <i data-feather='arrow-right'></i>
-                                </button>
+
                             </div>
                             <div class="col-12">
                                 <div class="card">
@@ -54,53 +50,31 @@
                                         <h4 class="card-title">{{ __('messages.static.edit') }}</h4>
                                     </div>
                                     <div class="card-body">
-                                        <form class="form form-horizontal" method="post" enctype="multipart/form-data"
-{{--                                              action="{{ route('admin.categories.update', $category->id) }}">--}}
-                                              action="#">
+                                        <form class="form form-horizontal" method="post" enctype="multipart/form-data" action="{{ route('admin.about.update', $about->id) }}">
                                             @csrf
                                             @method('put')
-                                            <div class="row">
 
-                                                <div class="col-12 mb-2" >
-                                                    <div class="form-group" >
 
-                                                    </div>
-                                                </div>
 
-                                                @foreach(getLangs() as $lang => $config)
-                                                    <div class="col-12 mb-2" >
-                                                        <br class="form-group" >
-                                                            <label  for="name_{{$lang}}">{{ __('labels.fields.name') }} ({{$lang}})
-                                                                <span class="text-danger">*</span>
-                                                            </label>
+                                            <div  style="margin: 5px ">
+                                                <label for="title_ar">العنوان (ar)
+                                                    <span class="text-danger">*</span>
+                                                </label>
 
-                                                            <input type="text"
-                                                                   class="form-control "
-{{--                                                                   id="name_{{$lang}}" name="name[{{$lang}}]" dir="{{$config['dir']}}"--}}
+                                                <input type="text"  style="width: max-content;" class="form-control " id="title_ar" name="title" value="{{$about->title}}"required>
+                                            </div>
 
-{{--                                                                   value="{{ old("name.$lang",$category->translate('name',$lang,false)) }}"  required--}}
-                                                                   oninvalid="this.setCustomValidity('يرجى ادخال اسم صحيح');"
-                                                                   onchange="try{setCustomValidity('')}catch(e){}" /><br>
 
-                                                            <input type="text"
-                                                                   class="form-control "
-{{--                                                                   id="name_{{$lang}}" name="name[{{$lang}}]" dir="{{$config['dir']}}"--}}
+                                          <div  style="margin: 5px">
+                                              <label for="description_ar">الوصف (ar)
+                                                  <span class="text-danger">*</span>
+                                              </label>
+                                              <textarea class="form-control"rows="3" name="discription">{{$about->discription}}</textarea>
+                                          </div><br>
 
-{{--                                                                   value="{{ old("name.$lang",$category->translate('name',$lang,false)) }}"  required--}}
-                                                                   oninvalid="this.setCustomValidity('يرجى ادخال اسم صحيح');"
-                                                                   onchange="try{setCustomValidity('')}catch(e){}" />
-                                                            @error("name.$lang")
-                                                            <div class="invalid-feedback">{{ $message }}</div>
-                                                            @enderror
+                                                        <div >
+                                                            <button type="submit"class="btn btn-danger">update</button>
                                                         </div>
-                                                    </div>
-                                                @endforeach
-
-
-
-
-
-                                                </div>
                                         </form>
 
                                     </div>

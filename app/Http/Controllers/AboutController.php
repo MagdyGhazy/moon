@@ -79,9 +79,16 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, About $about)
+    public function update(Request $request,$id)
     {
-        //
+        $about=About::findorfail($id);
+        $about->update([
+            'title'=>$request->title,
+            'discription'=>$request->discription,
+
+            ]);
+        return redirect()->route('admin.about.index');
+
     }
 
     /**
