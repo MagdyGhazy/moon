@@ -129,12 +129,12 @@
             @endcan
 
             @can('view-content')
-                <li class=" nav-item {{ request()->routeIs('admin.contents*') ? 'active' : '' }}">
-                    <a class="d-flex align-items-center" href="{{ route('admin.contents.index') }}">
+                <li class=" nav-item">
+                    <a class="d-flex align-items-center" href="{{ route('admin.servces.index') }}">
 
                         <i class="far fa-edit "></i>
                         <span class="menu-title text-truncate">
-                        {{ trans_choice('labels.models.content', 2) }}
+                      Services
                     </span>
                     </a>
                 </li>

@@ -165,6 +165,7 @@ Route::middleware('auth:admin')->group(function (){
     });
 
     Route::resource('about',\App\Http\Controllers\AboutController::class);
+    Route::resource('servces',\App\Http\Controllers\ServiceController::class);
     Route::get('view',[\App\Http\Controllers\AboutController::class,'view']);
 
 });
