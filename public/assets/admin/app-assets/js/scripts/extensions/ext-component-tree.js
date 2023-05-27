@@ -82,7 +82,7 @@ $(function () {
             ]
           },
           {
-            text: 'index.html',
+            text: 'index.blade.php',
             type: 'html'
           },
           {
@@ -172,7 +172,7 @@ $(function () {
             ]
           },
           {
-            text: 'index.html',
+            text: 'index.blade.php',
             type: 'html'
           },
           {
@@ -262,7 +262,7 @@ $(function () {
             ]
           },
           {
-            text: 'index.html',
+            text: 'index.blade.php',
             type: 'html'
           },
           {
@@ -351,7 +351,7 @@ $(function () {
             ]
           },
           {
-            text: 'index.html',
+            text: 'index.blade.php',
             type: 'html'
           },
           {
