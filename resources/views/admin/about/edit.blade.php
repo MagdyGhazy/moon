@@ -23,8 +23,7 @@
                                         <a href="{{ route('admin.dashboard') }}">{{ __('labels.fields.dashboard') }}</a>
                                     </li>
                                     <li class="breadcrumb-item">
-                                        <a
-                                            href="{{ route('admin.categories.index') }}"> {{__('messages.static.list',['name'=> trans_choice('labels.models.category',2)])}}</a>
+                                        <a href="{{route('admin.about.index')}}"> about us</a>
                                     </li>
 
                                     <li class="breadcrumb-item active">
@@ -42,7 +41,9 @@
                     <div class="col-md-6 col-12">
                         <div class="card">
                             <div class="card-header">
-
+                                <button  title="{{__('messages.static.back')}}" onclick="document.location = '{{url()->previous()}}'" type="button" class="btn btn-icon btn-outline-info">
+                                    <i data-feather='arrow-right'></i> back
+                                </button>
                             </div>
                             <div class="col-12">
                                 <div class="card">
