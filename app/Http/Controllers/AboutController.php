@@ -21,6 +21,7 @@ class AboutController extends Controller
         return view('admin.about.aboutindex',compact('abouts'));
 
     }
+
     /**
      * Show the form for creating a new resource.
      *

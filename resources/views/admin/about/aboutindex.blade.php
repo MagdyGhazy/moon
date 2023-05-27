@@ -102,7 +102,7 @@
 
 
                                     </table>
-
+                                        <a href="{{route('admin.about.view')}}">here</a>
                                 </div>
                             </div>
                         </div>

@@ -165,6 +165,6 @@ Route::middleware('auth:admin')->group(function (){
     });
 
     Route::resource('about',\App\Http\Controllers\AboutController::class);
-//    Route::resource('about.delete/{id}',[\App\Http\Controllers\AboutController::class,'delete']);
+    Route::get('view',[\App\Http\Controllers\AboutController::class,'view']);
 
 });

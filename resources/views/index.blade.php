@@ -76,7 +76,7 @@
           <li><a href="#contact">Contact Us</a></li>
         </ul>
       </nav><!-- .main-nav -->
-      
+
     </div>
   </header><!-- #header -->
 
@@ -123,8 +123,10 @@
 
             <div class="icon-box wow fadeInUp">
               <div class="icon"><i class="fa fa-shopping-bag"></i></div>
-              <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+                @foreach($about1 as $about)
+              <h4 class="title"><a href="">{{$about->title}}</a></h4>
+              <p class="description">{{$about->discription}}</p>
+                @endforeach
             </div>
 
             <div class="icon-box wow fadeInUp" data-wow-delay="0.2s">
@@ -169,7 +171,7 @@
           <div class="col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1">
             <h4>Neque saepe temporibus repellat ea ipsum et. Id vel et quia tempora facere reprehenderit.</h4>
             <p>
-             Delectus alias ut incidunt delectus nam placeat in consequatur. Sed cupiditate quia ea quis. Voluptas nemo qui aut distinctio. Cumque fugit earum est quam officiis numquam. Ducimus corporis autem at blanditiis beatae incidunt sunt. 
+             Delectus alias ut incidunt delectus nam placeat in consequatur. Sed cupiditate quia ea quis. Voluptas nemo qui aut distinctio. Cumque fugit earum est quam officiis numquam. Ducimus corporis autem at blanditiis beatae incidunt sunt.
             </p>
             <p>
               Voluptas saepe natus quidem blanditiis. Non sunt impedit voluptas mollitia beatae. Qui esse molestias. Laudantium libero nisi vitae debitis. Dolorem cupiditate est perferendis iusto.
@@ -178,7 +180,7 @@
               Eum quia in. Magni quas ipsum a. Quis ex voluptatem inventore sint quia modi. Numquam est aut fuga mollitia exercitationem nam accusantium provident quia.
             </p>
           </div>
-          
+
         </div>
 
       </div>
@@ -315,7 +317,7 @@
             <span data-toggle="counter-up">18</span>
             <p>Hard Workers</p>
           </div>
-  
+
         </div>
 
       </div>
@@ -489,7 +491,7 @@
           <div class="col-lg-8">
 
             <div class="owl-carousel testimonials-carousel wow fadeInUp">
-    
+
               <div class="testimonial-item">
                 <img src="img/testimonial-1.jpg" class="testimonial-img" alt="">
                 <h3>Saul Goodman</h3>
@@ -498,7 +500,7 @@
                   Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
                 </p>
               </div>
-    
+
               <div class="testimonial-item">
                 <img src="img/testimonial-2.jpg" class="testimonial-img" alt="">
                 <h3>Sara Wilsson</h3>
@@ -507,7 +509,7 @@
                   Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
                 </p>
               </div>
-    
+
               <div class="testimonial-item">
                 <img src="img/testimonial-3.jpg" class="testimonial-img" alt="">
                 <h3>Jena Karlis</h3>
@@ -516,7 +518,7 @@
                   Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
                 </p>
               </div>
-    
+
               <div class="testimonial-item">
                 <img src="img/testimonial-4.jpg" class="testimonial-img" alt="">
                 <h3>Matt Brandon</h3>
@@ -525,7 +527,7 @@
                   Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
                 </p>
               </div>
-    
+
               <div class="testimonial-item">
                 <img src="img/testimonial-5.jpg" class="testimonial-img" alt="">
                 <h3>John Larson</h3>
@@ -652,43 +654,43 @@
               <img src="img/clients/client-1.png" class="img-fluid" alt="">
             </div>
           </div>
-          
+
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
               <img src="img/clients/client-2.png" class="img-fluid" alt="">
             </div>
           </div>
-        
+
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
               <img src="img/clients/client-3.png" class="img-fluid" alt="">
             </div>
           </div>
-          
+
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
               <img src="img/clients/client-4.png" class="img-fluid" alt="">
             </div>
           </div>
-          
+
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
               <img src="img/clients/client-5.png" class="img-fluid" alt="">
             </div>
           </div>
-        
+
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
               <img src="img/clients/client-6.png" class="img-fluid" alt="">
             </div>
           </div>
-          
+
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
               <img src="img/clients/client-7.png" class="img-fluid" alt="">
             </div>
           </div>
-          
+
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
               <img src="img/clients/client-8.png" class="img-fluid" alt="">
