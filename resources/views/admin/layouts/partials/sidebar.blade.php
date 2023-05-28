@@ -104,6 +104,7 @@
                     </a>
                 </li>
             @endcan
+
             @can('view-section')
                 <li class=" nav-item {{ request()->routeIs('admin.sections*') ? 'active' : '' }}">
                     <a class="d-flex align-items-center" href="{{ route('admin.sections.index') }}">
@@ -127,19 +128,6 @@
                     </a>
                 </li>
             @endcan
-
-            @can('view-content')
-                <li class=" nav-item">
-                    <a class="d-flex align-items-center" href="{{ route('admin.servces.index') }}">
-
-                        <i class="far fa-edit "></i>
-                        <span class="menu-title text-truncate">
-                      Services
-                    </span>
-                    </a>
-                </li>
-            @endcan
-
 
             @can('view-paragraph')
                 <li class=" nav-item {{ request()->routeIs('admin.paragraphs*') ? 'active' : '' }}">
@@ -187,11 +175,9 @@
             @endcan
 
 
-
-
-                <li class="nav-item has-sub @if (request()->is(['admin/main*', 'admin/details*'])) sidebar-group-active open @endif">
+            <li class="nav-item has-sub @if (request()->is(['admin/main*', 'admin/details*'])) sidebar-group-active open @endif">
                     <a href="#" class="d-flex align-items-center">
-                        <i class="fas fa-user-circle"></i>
+                        <i class="fas fa-info"></i>
                         <span class="menu-title text-truncate">
                             About Us
                         </span>
@@ -223,6 +209,31 @@
                             </li>
                     </ul>
                 </li>
+
+
+
+                <li class=" nav-item">
+                    <a class="d-flex align-items-center" href="{{ route('admin.servces.index') }}">
+
+                        <i class="fas fa-server"></i>
+                        <span class="menu-title text-truncate">
+                      Services
+                    </span>
+                    </a>
+                </li>
+
+
+            @can('view-language')
+                <li class=" nav-item {{ request()->routeIs('admin.languages*') ? 'active' : '' }}">
+                    <a class="d-flex align-items-center" href="{{ route('admin.team.index') }}">
+                        <i class="fas fa-users"></i>
+                        <span class="menu-title text-truncate">
+                        Team
+                    </span>
+                    </a>
+                </li>
+            @endcan
+
             </ul>
          </div>
     </div>

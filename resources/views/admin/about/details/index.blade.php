@@ -79,6 +79,7 @@
                                         <tbody>
                                             <?php $i = 0; ?>
                                         @foreach($abouts as $about)
+                                        <tr>
                                                 <?php $i++; ?>
                                                 <td style="width: 20%">{{ $i }}</td>
                                                 <td style="width: 20%">{{$about->title}}</td>
@@ -102,12 +103,10 @@
                                                         </span>
                                                     </div>
                                                 </td>
-                                            </tr>
+
+                                        </tr>
                                         @endforeach
-
                                         </tbody>
-
-
                                     </table>
                                 </div>
                             </div>

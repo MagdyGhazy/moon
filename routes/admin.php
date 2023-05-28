@@ -169,9 +169,17 @@ Route::middleware('auth:admin')->group(function (){
      */
     Route::resource('main',\App\Http\Controllers\MainAboutController::class);
     Route::resource('details',\App\Http\Controllers\AboutController::class);
+
+
     /**
      * ServiceController
      */
     Route::resource('servces',\App\Http\Controllers\ServiceController::class);
+
+
+    /**
+     * AboutUsController
+     */
+    Route::resource('team',\App\Http\Controllers\TeamController::class);
 
 });
