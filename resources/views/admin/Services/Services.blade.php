@@ -72,9 +72,11 @@
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        <?php $i=0; ?>
                                         @foreach($Services as $Service)
                                             <tr>
-                                                <th scope="row">{{$Service->id}}</th>
+                                                <?php $i++; ?>
+                                                <th scope="row">{{$i}}</th>
                                                 <td>{{$Service->Services}}</td>
                                                 <td>{{$Service->ServicesDiscription}}</td>
 

@@ -40,6 +40,7 @@ class ServiceController extends Controller
     {
         Service::create([
             'Services'=> $request->Services,
+            'icon'=>$request->icon,
             'ServicesDiscription'=> $request->ServicesDiscription,
         ]);
         $Services = Service::get();
@@ -81,6 +82,7 @@ class ServiceController extends Controller
         $Service=Service::findorfail($id);
         $Service->update([
             'Services'=> $request->Services,
+            'icon'=>$request->icon,
             'ServicesDiscription'=> $request->ServicesDiscription,
 
         ]);

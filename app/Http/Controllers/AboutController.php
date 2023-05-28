@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Content;
+use App\Models\Service;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -18,7 +19,8 @@ class AboutController extends Controller
     public function index()
     {
         $abouts = About::get();
-        return view('admin.about.details.index',compact('abouts'));
+
+        return view('admin.about.details.index',compact('abouts',));
 
     }
     /**

@@ -23,7 +23,7 @@
                                         <a href="{{route('admin.dashboard')}}">{{__('labels.fields.dashboard')}}</a>
                                     </li>
                                     <li class="breadcrumb-item">
-                                        <a href="{{route('admin.about.index')}}"> about us</a>
+                                        <a href="#"> about us</a>
                                     </li>
 
                                     <li class="breadcrumb-item active">
@@ -61,6 +61,13 @@
                                                             <span class="text-danger">*</span>
                                                         </label>
                                                         <input type="text"  name="Services" id="Services" class="form-control">
+
+                                                    </div>
+                                                    <div class="form-group" >
+                                                        <label for="section">icon
+                                                            <span class="text-danger">*</span>
+                                                        </label>
+                                                        <input type="text"  name="icon" id="Services" class="form-control">
 
                                                     </div>
                                                 </div>
