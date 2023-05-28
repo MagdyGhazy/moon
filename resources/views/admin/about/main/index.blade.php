@@ -76,9 +76,10 @@
                                         </tr>
                                         </thead>
                                         <tbody>
+                                            <?php $i = 0; ?>
                                         @foreach($Abouts as $about)
-                                            <tr>
-                                                <th scope="row">{{$about->id}}</th>
+                                                <?php $i++; ?>
+                                            <td>{{ $i }}</td>
                                                 <td>{{$about->title}}</td>
                                                 <td>{{$about->discription}}</td>
                                                 <td>{{$about->img}}</td>
