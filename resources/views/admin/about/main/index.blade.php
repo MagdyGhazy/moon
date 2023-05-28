@@ -20,7 +20,10 @@
                                     </li>
 
                                     <li class="breadcrumb-item active">
-                                      about us
+                                         About Us
+                                    </li>
+                                    <li class="breadcrumb-item active">
+                                        Main
                                     </li>
                                 </ol>
                             </div>
@@ -38,7 +41,7 @@
                             <div class="card-header ">
                                 <div>
                                     @can('create-content')
-                                        <a title="{{__('messages.static.create')}}"  id="create-btn" href="{{route('admin.about.create')}}"
+                                        <a title="{{__('messages.static.create')}}"  id="create-btn" href="{{route('admin.main.create')}}"
                                            class="btn btn-icon btn-outline-primary">
                                             <i data-feather="plus"></i>  Add
                                         </a>
@@ -68,25 +71,26 @@
                                             <th scope="col">#</th>
                                             <th scope="col">title</th>
                                             <th scope="col">discription</th>
+                                            <th scope="col">img</th>
                                             <th scope="col">Handle</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($abouts as $about)
+                                        @foreach($Abouts as $about)
                                             <tr>
                                                 <th scope="row">{{$about->id}}</th>
                                                 <td>{{$about->title}}</td>
                                                 <td>{{$about->discription}}</td>
-
+                                                <td>{{$about->img}}</td>
                                                 <td>
                                                     <div class="row wow fadeInUp" style="justify-content: right ">
                                                         <span style="padding-left: 2% ;width: auto">
-                                                               <a class="btn btn-primary" href="{{route('admin.about.edit', $about->id)}}" role="button"><i class="mr-50 fas fa-edit"></i></a>
+                                                               <a class="btn btn-primary" href="{{route('admin.main.edit', $about->id)}}" role="button"><i class="mr-50 fas fa-edit"></i></a>
                                                         </span>
 
 
                                                         <span>
-                                                    <form action="{{route('admin.about.destroy',$about->id)}}" method="post">
+                                                    <form action="{{route('admin.main.destroy',$about->id)}}" method="post">
 
                                                         @csrf
                                                         @method('DELETE')

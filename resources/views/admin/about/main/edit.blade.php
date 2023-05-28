@@ -23,11 +23,11 @@
                                         <a href="{{ route('admin.dashboard') }}">{{ __('labels.fields.dashboard') }}</a>
                                     </li>
                                     <li class="breadcrumb-item">
-                                        <a href="{{route('admin.about.index')}}"> about us</a>
+                                         About Us
                                     </li>
 
                                     <li class="breadcrumb-item active">
-                                        {{ __('messages.static.edit') }}
+                                        Edit
                                     </li>
                                 </ol>
                             </div>
@@ -51,23 +51,31 @@
                                         <h4 class="card-title">{{ __('messages.static.edit') }}</h4>
                                     </div>
                                     <div class="card-body">
-                                        <form class="form form-horizontal" method="post" enctype="multipart/form-data" action="{{ route('admin.about.update', $about->id) }}">
+                                        <form class="form form-horizontal" method="post" enctype="multipart/form-data" action="{{ route('admin.main.update', $about->id) }}">
                                             @csrf
                                             @method('put')
 
 
 
                                             <div  style="margin: 5px ">
-                                                <label for="title_ar">العنوان (ar)
+                                                <label for="title_ar">Title
                                                     <span class="text-danger">*</span>
                                                 </label>
 
                                                 <input type="text"  style="width: max-content;" class="form-control " id="title_ar" name="title" value="{{$about->title}}"required>
                                             </div>
 
+                                            <div  style="margin: 5px ">
+                                                <label for="title_ar">Img
+                                                    <span class="text-danger">*</span>
+                                                </label>
+
+                                                <input type="text"  style="width: max-content;" class="form-control " id="title_ar" name="img" value="{{$about->img}}"required>
+                                            </div>
+
 
                                           <div  style="margin: 5px">
-                                              <label for="description_ar">الوصف (ar)
+                                              <label for="description_ar">Discription
                                                   <span class="text-danger">*</span>
                                               </label>
                                               <textarea class="form-control"rows="3" name="discription">{{$about->discription}}</textarea>

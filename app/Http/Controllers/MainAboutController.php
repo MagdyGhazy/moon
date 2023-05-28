@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\About;
-use App\Models\Content;
-use Illuminate\Http\RedirectResponse;
+use App\Models\MainAbout;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class AboutController extends Controller
+class MainAboutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +14,8 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $abouts = About::get();
-        return view('admin.about.details.index',compact('abouts'));
+        $Abouts = MainAbout::get();
+        return view('admin.about.main.index',compact('Abouts'));
 
     }
     /**
@@ -28,7 +25,7 @@ class AboutController extends Controller
      */
     public function create()
     {
-        return view('admin.about.details.create');
+        return view('admin.about.main.create');
     }
 
     /**
@@ -39,23 +36,23 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        About::create([
-           'title'=> $request->title,
-           'discription'=> $request->discription,
-           'icon'=> $request->icon,
+        MainAbout::create([
+            'title'=> $request->title,
+            'discription'=> $request->discription,
+            'img'=> $request->img,
         ]);
 
-        return redirect()->route('admin.details.index');
+        return redirect()->route('admin.main.index');
 
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\About  $about
+     * @param  \App\Models\MainAbout  $about
      * @return \Illuminate\Http\Response
      */
-    public function show(About $about)
+    public function show(MainAbout $about)
     {
         //
     }
@@ -63,13 +60,13 @@ class AboutController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\About  $about
+     * @param  \App\Models\MainAbout  $about
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $about=About::findorfail($id);
-        return view('admin.about.details.edit',compact('about'));
+        $about=MainAbout::findorfail($id);
+        return view('admin.about.main.edit',compact('about'));
 
     }
 
@@ -77,34 +74,35 @@ class AboutController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\About  $about
+     * @param  \App\Models\MainAbout  $about
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request,$id)
     {
-        $about=About::findorfail($id);
+        $about=MainAbout::findorfail($id);
         $about->update([
             'title'=>$request->title,
             'discription'=>$request->discription,
-            'icon'=> $request->icon,
-            ]);
-        return redirect()->route('admin.details.index');
+            'img'=> $request->img,
+        ]);
+        return redirect()->route('admin.main.index');
 
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\About  $about
+     * @param  \App\Models\MainAbout  $about
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
 
-      About::findorfail($id)->delete();
+        MainAbout::findorfail($id)->delete();
 
 
-        return redirect()->route('admin.details.index');
+        return redirect()->route('admin.main.index');
     }
 }
+
 

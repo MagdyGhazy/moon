@@ -186,20 +186,43 @@
                 </li>
             @endcan
 
-            @can('view-admin-notification')
-                <li class=" nav-item {{ request()->routeIs('admin.about*') ? 'active' : '' }}">
-                    <a class="d-flex align-items-center" href="{{ route('admin.about.index') }}">
 
-                        <i class="fas fa-bell"></i>
+
+
+                <li class="nav-item has-sub @if (request()->is(['admin/main*', 'admin/details*'])) sidebar-group-active open @endif">
+                    <a href="#" class="d-flex align-items-center">
+                        <i class="fas fa-user-circle"></i>
                         <span class="menu-title text-truncate">
-                           about us
+                            About Us
                         </span>
                     </a>
+
+                    <ul class="menu-content">
+
+
+                            <li class="nav-item">
+                                <a href="{{ route('admin.main.index') }}"
+                                   class="nav-link {{ request()->routeIs('admin.main*') ? 'active' : '' }}"
+                                   data-link="/admin/admins">
+                                    <i class="fas fa-users-cog"></i>
+                                    <span
+                                        class="menu-title text-truncate">Main</span>
+                                </a>
+                            </li>
+
+
+
+                            <li class="nav-item">
+                                <a href="{{ route('admin.details.index') }}" data-link="/admin/roles"
+                                   class="nav-link {{ request()->routeIs('admin.details*') ? 'active' : '' }} ">
+                                    <i class="fas fa-user-tag"></i>
+                                    <span class="menu-title text-truncate">
+                                        Details
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
                 </li>
-            @endcan
-
-
-
-        </ul>
+            </ul>
+         </div>
     </div>
-</div>

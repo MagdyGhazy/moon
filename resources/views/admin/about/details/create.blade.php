@@ -23,7 +23,7 @@
                                         <a href="{{route('admin.dashboard')}}">{{__('labels.fields.dashboard')}}</a>
                                     </li>
                                     <li class="breadcrumb-item">
-                                        <a href="{{route('admin.about.index')}}"> about us</a>
+                                         About Us
                                     </li>
 
                                     <li class="breadcrumb-item active">
@@ -52,7 +52,7 @@
                                         <h4 class="card-title">Add New</h4>
                                     </div>
                                     <div class="card-body">
-                                        <form class="form form-horizontal" method="post" action="{{route('admin.about.store')}}" enctype="multipart/form-data">
+                                        <form class="form form-horizontal" method="post" action="{{route('admin.details.store')}}" enctype="multipart/form-data">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-12 mb-2" >
@@ -61,7 +61,15 @@
                                                             <span class="text-danger">*</span>
                                                         </label>
                                                         <input type="text"  name="title" id="category_id" class="form-control">
+                                                    </div>
+                                                </div>
 
+                                                <div class="col-12 mb-2" >
+                                                    <div class="form-group" >
+                                                        <label for="section">Icon
+                                                            <span class="text-danger">*</span>
+                                                        </label>
+                                                        <input type="text"  name="icon" id="category_id" class="form-control">
                                                     </div>
                                                 </div>
 
