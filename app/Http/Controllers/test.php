@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\MainAbout;
 use App\Models\Service;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class test extends Controller
@@ -14,8 +15,10 @@ class test extends Controller
     {
         $about = About::get();
         $About = MainAbout::get();
-        $Services= Service::get();
-        return view('index',compact('about','About','Services'));
+        $Services = Service::get();
+        return view('index', compact('about', 'About', 'Services'));
+        $teams = Team::get();
 
+        return view('index', compact('about', 'About', 'teams'));
     }
 }
