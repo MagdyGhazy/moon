@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\About;
-use App\Models\Service;
+use App\Models\Web;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ServiceController extends Controller
+class WebController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,10 @@ class ServiceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $Services = Service::get();
-        return view('admin.Services.Services',compact('Services'));
+    { $Portfolio =Web::get();
+        return view('admin.Portfolio.web.Portfolio',compact('Portfolio'));
+
+
     }
 
     /**
@@ -27,7 +27,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('admin.Services.add');
+        return view('admin.Portfolio.web.add');
     }
 
     /**
@@ -37,24 +37,23 @@ class ServiceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-
     {
-        Service::create([
-            'Services'=> $request->Services,
-            'icon'=>$request->icon,
-            'ServicesDiscription'=> $request->ServicesDiscription,
+        Web::create([
+            'WebName'=> $request->WebName,
+            'WebImage'=>$request->WebImage,
+            'WebLinke'=> $request->WebLinke,
         ]);
-        $Services = Service::get();
-        return view('admin.Services.Services',compact('Services'));
+        $Portfolio=Web::get();
+        return view('admin.Portfolio.web.Portfolio',compact('Portfolio'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Service  $service
+     * @param  \App\Models\Web  $web
      * @return \Illuminate\Http\Response
      */
-    public function show(Service $service)
+    public function show(Web $web)
     {
         //
     }
@@ -62,43 +61,43 @@ class ServiceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Service  $service
+     * @param  \App\Models\Web  $web
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $Service=Service::findorfail($id);
-        return view('admin.services.edit',compact('Service'));
+        $Portfolio=Web::findorfail($id);
+        return view('admin.Portfolio.web.edit',compact('Portfolio'));
+
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Service  $service
+     * @param  \App\Models\Web  $web
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
-        $Service=Service::findorfail($id);
-        $Service->update([
-            'Services'=> $request->Services,
-            'icon'=>$request->icon,
-            'ServicesDiscription'=> $request->ServicesDiscription,
-
+        $Portfolio=Web::findorfail($id);
+        $Portfolio->update([
+            'WebName'=> $request->WebName,
+            'WebImage'=>$request->WebImage,
+            'WebLinke'=> $request->WebLinke,
         ]);
-        return redirect()->route('admin.servces.index');
+        return redirect()->route('admin.WEB.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Service  $service
+     * @param  \App\Models\Web  $web
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-       Service::findorfail($id)->delete();
-        return redirect()->route('admin.servces.index');
+        Web::findorfail($id)->delete();
+        return redirect()->route('admin.WEB.index');
     }
 }

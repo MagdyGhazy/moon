@@ -612,6 +612,8 @@ class ComposerStaticInit9dcd700841943b4b03fb65e2f62f2d7e
         'App\\Models\\SharedBackgrounds' => __DIR__ . '/../..' . '/app/Models/SharedBackgrounds.php',
         'App\\Models\\Team' => __DIR__ . '/../..' . '/app/Models/Team.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\Web' => __DIR__ . '/../..' . '/app/Models/Web.php',
+        'App\\Models\\app' => __DIR__ . '/../..' . '/app/Models/app.php',
         'App\\Notifications\\AdminResetPasswordNotification' => __DIR__ . '/../..' . '/app/Notifications/AdminResetPasswordNotification.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

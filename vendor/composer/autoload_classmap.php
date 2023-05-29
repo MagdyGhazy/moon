@@ -101,6 +101,8 @@ return array(
     'App\\Models\\SharedBackgrounds' => $baseDir . '/app/Models/SharedBackgrounds.php',
     'App\\Models\\Team' => $baseDir . '/app/Models/Team.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
+    'App\\Models\\Web' => $baseDir . '/app/Models/Web.php',
+    'App\\Models\\app' => $baseDir . '/app/Models/app.php',
     'App\\Notifications\\AdminResetPasswordNotification' => $baseDir . '/app/Notifications/AdminResetPasswordNotification.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
