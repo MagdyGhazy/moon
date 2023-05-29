@@ -86,6 +86,7 @@ return array(
     'App\\Models\\Admin' => $baseDir . '/app/Models/Admin.php',
     'App\\Models\\AdminNotification' => $baseDir . '/app/Models/AdminNotification.php',
     'App\\Models\\Category' => $baseDir . '/app/Models/Category.php',
+    'App\\Models\\ContactUs' => $baseDir . '/app/Models/ContactUs.php',
     'App\\Models\\Content' => $baseDir . '/app/Models/Content.php',
     'App\\Models\\ContentMargin' => $baseDir . '/app/Models/ContentMargin.php',
     'App\\Models\\MainAbout' => $baseDir . '/app/Models/MainAbout.php',

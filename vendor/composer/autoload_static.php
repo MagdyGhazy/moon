@@ -597,6 +597,7 @@ class ComposerStaticInit9dcd700841943b4b03fb65e2f62f2d7e
         'App\\Models\\Admin' => __DIR__ . '/../..' . '/app/Models/Admin.php',
         'App\\Models\\AdminNotification' => __DIR__ . '/../..' . '/app/Models/AdminNotification.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
+        'App\\Models\\ContactUs' => __DIR__ . '/../..' . '/app/Models/ContactUs.php',
         'App\\Models\\Content' => __DIR__ . '/../..' . '/app/Models/Content.php',
         'App\\Models\\ContentMargin' => __DIR__ . '/../..' . '/app/Models/ContentMargin.php',
         'App\\Models\\MainAbout' => __DIR__ . '/../..' . '/app/Models/MainAbout.php',

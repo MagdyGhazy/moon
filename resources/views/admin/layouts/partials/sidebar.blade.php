@@ -257,8 +257,8 @@
                 </li>
 
 
-            @can('view-language')
-                <li class=" nav-item {{ request()->routeIs('admin.languages*') ? 'active' : '' }}">
+
+                <li class=" nav-item {{ request()->routeIs('admin.team*') ? 'active' : '' }}">
                     <a class="d-flex align-items-center" href="{{ route('admin.team.index') }}">
                         <i class="fas fa-users"></i>
                         <span class="menu-title text-truncate">
@@ -266,7 +266,17 @@
                     </span>
                     </a>
                 </li>
-            @endcan
+
+
+            <li class=" nav-item {{ request()->routeIs('admin.contact*') ? 'active' : '' }}">
+                <a class="d-flex align-items-center" href="{{ route('admin.contact.index') }}">
+                    <i class="fas fa-users"></i>
+                    <span class="menu-title text-truncate">
+                        Cotact Us
+                    </span>
+                </a>
+            </li>
+
 
             </ul>
          </div>

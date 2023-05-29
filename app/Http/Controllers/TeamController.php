@@ -36,17 +36,29 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        Team::create([
-            'name'=> $request->name,
-            'job'=> $request->job,
-            'image'=>$request->image,
-            'fb'=> $request->fb,
-            'li'=> $request->li,
-            'gm'=> $request->gm,
-            'ig'=> $request->ig,
-        ]);
+//        Team::create([
+//            'name'=> $request->name,
+//            'job'=> $request->job,
+//            'image'=>$request->image,
+//            'fb'=> $request->fb,
+//            'li'=> $request->li,
+//            'gm'=> $request->gm,
+//            'ig'=> $request->ig,
+//        ]);
 
-        return redirect()->route('admin.team.index');
+
+        $path = $request->file('image')->store('public/img');
+        $save = new Team;
+        $save->image = $path;
+        $save->name = $request->name;
+        $save->job = $request->job;
+        $save->fb = $request->fb;
+        $save->li = $request->li;
+        $save->gm = $request->gm;
+        $save->ig = $request->ig;
+        $save->save();
+//        return $path;
+        return redirect()->route('admin.team.index')->with('status', 'Image Has been uploaded');
 
     }
 
