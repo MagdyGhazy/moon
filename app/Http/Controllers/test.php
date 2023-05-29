@@ -11,14 +11,13 @@ use Illuminate\Http\Request;
 class test extends Controller
 {
 
-    public function index()
-    {
-        $about = About::get();
-        $About = MainAbout::get();
-        $Services = Service::get();
-        return view('index', compact('about', 'About', 'Services'));
-        $teams = Team::get();
+        public function index()
+        {
+                $about = About::get();
+                $About = MainAbout::get();
+                $Services = Service::get();
+                $teams = Team::get();
 
-        return view('index', compact('about', 'About', 'teams'));
-    }
+                return view('index', compact('about', 'About', 'Services', 'teams'));
+        }
 }

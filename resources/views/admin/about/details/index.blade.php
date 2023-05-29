@@ -67,20 +67,16 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">title</th>
-                                            <th scope="col">discription</th>
-                                            <th scope="col">icon</th>
-                                            <th scope="col">Handle</th>
+                                            <th scope="col" style="width: 20%">#</th>
+                                            <th scope="col" style="width: 20%">title</th>
+                                            <th scope="col" style="width: 20%">discription</th>
+                                            <th scope="col" style="width: 20%">icon</th>
+                                            <th scope="col" style="width: 20% ;text-align: center">Handle</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php $i = 0; ?>
                                         @foreach($abouts as $about)
-                                        <tr>
-                                            <th scope="row">{{$about->id}}</th>
-                                            <td>{{$about->title}}</td>
-                                            <td>{{$about->discription}}</td>
-                                            <td>{{$about->icon}}</td>
                                         <tr>
                                             <?php $i++; ?>
                                             <td style="width: 20%">{{ $i }}</td>
@@ -89,13 +85,13 @@
                                             <td style="width: 20%">{{$about->icon}}</td>
 
                                             <td>
-                                                <div class="row wow fadeInUp" style="justify-content: right ">
-                                                    <span style="padding-left: 2% ;width: auto">
+                                                <div class="row wow fadeInUp" style="justify-content: center ">
+                                                    <span style="padding-left: 2%">
                                                         <a class="btn btn-primary" href="{{route('admin.details.edit', $about->id)}}" role="button"><i class="mr-50 fas fa-edit"></i></a>
                                                     </span>
 
 
-                                                    <span>
+                                                    <span style="padding-left: 2%">
                                                         <form action="{{route('admin.details.destroy',$about->id)}}" method="post">
 
                                                             @csrf
@@ -117,6 +113,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 
 @endsection
