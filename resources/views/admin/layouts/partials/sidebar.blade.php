@@ -209,6 +209,40 @@
                             </li>
                     </ul>
                 </li>
+            <li class="nav-item has-sub @if (request()->is(['admin/main*', 'admin/details*'])) sidebar-group-active open @endif">
+                    <a href="#" class="d-flex align-items-center">
+                        <i class="fas fa-info"></i>
+                        <span class="menu-title text-truncate">
+                            Our Portfolio
+                        </span>
+                    </a>
+
+                    <ul class="menu-content">
+
+
+                            <li class="nav-item">
+                                <a href="{{ route('admin.app.index') }}"
+                                   class="nav-link {{ request()->routeIs('admin.main*') ? 'active' : '' }}"
+                                   data-link="/admin/admins">
+                                    <i class="fas fa-users-cog"></i>
+                                    <span
+                                        class="menu-title text-truncate">Mobile_APP</span>
+                                </a>
+                            </li>
+
+
+
+                            <li class="nav-item">
+                                <a href="{{ route('admin.WEB.index') }}" data-link="/admin/roles"
+                                   class="nav-link {{ request()->routeIs('admin.details*') ? 'active' : '' }} ">
+                                    <i class="fas fa-user-tag"></i>
+                                    <span class="menu-title text-truncate">
+                                        web
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
+                </li>
 
 
 
