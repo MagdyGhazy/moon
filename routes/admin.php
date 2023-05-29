@@ -178,8 +178,15 @@ Route::middleware('auth:admin')->group(function (){
 
 
     /**
-     * AboutUsController
+     * TeamController
      */
     Route::resource('team',\App\Http\Controllers\TeamController::class);
+
+
+
+    /**
+     * ContactUsController
+     */
+    Route::resource('contact',\App\Http\Controllers\ContactUsController::class);
 
 });

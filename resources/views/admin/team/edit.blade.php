@@ -114,7 +114,7 @@
                                             </div>
 
                                                         <div >
-                                                            <button type="submit"class="btn btn-danger">update</button>
+                                                            <button type="submit"class="btn btn-info">update</button>
                                                         </div>
                                         </form>
 

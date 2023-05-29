@@ -66,12 +66,12 @@
                                     <table class="table">
                                         <thead>
                                         <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">name</th>
-                                            <th scope="col">job</th>
-                                            <th scope="col" >image</th>
-                                            <th scope="col" >social</th>
-                                            <th scope="col" style="text-align: center">handel</th>
+                                            <th scope="col" style="width: 5%">#</th>
+                                            <th scope="col" style="width: 15%">name</th>
+                                            <th scope="col" style="width: 15%">job</th>
+                                            <th scope="col" style="width: 15%">image</th>
+                                            <th scope="col" style="width: 20%">social</th>
+                                            <th scope="col" style="text-align: center ;width: 20%">handel</th>
 
                                         </tr>
                                         </thead>
