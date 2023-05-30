@@ -1,7 +1,9 @@
 <?php
 
 
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 Route::redirect('/','admin/dashboard');
 
@@ -185,7 +187,8 @@ Route::middleware('auth:admin')->group(function (){
     /**
      * TeamController
      */
-    Route::resource('team',\App\Http\Controllers\TeamController::class);
+    Route::resource('team',TeamController::class);
+
 
 
 

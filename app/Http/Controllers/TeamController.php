@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Team;
+use App\Traits\UploadImages;
 use Illuminate\Http\Request;
 
 class TeamController extends Controller
 {
+
+    use UploadImages;
     /**
      * Display a listing of the resource.
      *
@@ -36,29 +39,22 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-//        Team::create([
-//            'name'=> $request->name,
-//            'job'=> $request->job,
-//            'image'=>$request->image,
-//            'fb'=> $request->fb,
-//            'li'=> $request->li,
-//            'gm'=> $request->gm,
-//            'ig'=> $request->ig,
-//        ]);
+
+        $path = $this->uploadImage($request,'team');
+
+        Team::create([
+            'name'=> $request->name,
+            'job'=> $request->job,
+            'image'=>$path,
+            'fb'=> $request->fb,
+            'li'=> $request->li,
+            'gm'=> $request->gm,
+            'ig'=> $request->ig,
+        ]);
 
 
-        $path = $request->file('image')->store('public/img');
-        $save = new Team;
-        $save->image = $path;
-        $save->name = $request->name;
-        $save->job = $request->job;
-        $save->fb = $request->fb;
-        $save->li = $request->li;
-        $save->gm = $request->gm;
-        $save->ig = $request->ig;
-        $save->save();
-//        return $path;
-        return redirect()->route('admin.team.index')->with('status', 'Image Has been uploaded');
+
+        return redirect()->route('admin.team.index');
 
     }
 
@@ -121,6 +117,10 @@ class TeamController extends Controller
 
 
         return redirect()->route('admin.team.index');
+    }
+
+    public function save(Request $request){
+
     }
 }
 

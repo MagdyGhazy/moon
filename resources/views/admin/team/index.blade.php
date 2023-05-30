@@ -83,7 +83,8 @@
                                             <td rowspan="4" style="width: 5%">{{ $i }}</td>
                                             <td rowspan="4" style="width: 15%">{{$team->name}}</td>
                                             <td rowspan="4" style="width: 15%">{{$team->job}}</td>
-                                            <td rowspan="4" style="width: 15%">{{$team->image}}</td>
+                                            <td rowspan="4" style="width: 15%"><img src="{{asset('img/'.$team->image)}}" class="img-fluid" alt=""></td>
+
                                             <td style="width: 20%">{{$team->fb}}</td>
                                             <td rowspan="4" style="width: 20% ;align-content: center">
                                                 <div class="row wow fadeInUp" style="justify-content: center ">
