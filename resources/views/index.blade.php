@@ -415,7 +415,7 @@
             @foreach($teams as $team)
           <div class="col-lg-3 col-md-6 wow fadeInUp">
             <div class="member">
-              <img src="{{asset('img/'.$team->image)}}" class="img-fluid" alt="">
+                <img src="{{asset('img/'.$team->image)}}" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
                   <h4>{{$team->name}}</h4>
@@ -502,55 +502,56 @@
           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque dere santome nida.</p>
         </div>
 
-        <div class="row no-gutters clients-wrap clearfix wow fadeInUp">
+        <div class="row no-gutters clients-wrap clearfix wow fadeInUp" style="text-align: center">
 
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="img/clients/client-1.png" class="img-fluid" alt="">
-            </div>
-          </div>
+            @foreach($clients as $client)
+                  <div class="col-lg-3 col-md-4 col-xs-6">
+                    <div class="client-logo">
+                      <img src="{{asset('img/'.$client->logo)}}" class="img-fluid" alt="">
+                    </div>
+                  </div>
+            @endforeach
+{{--          <div class="col-lg-3 col-md-4 col-xs-6">--}}
+{{--            <div class="client-logo">--}}
+{{--              <img src="img/clients/client-2.png" class="img-fluid" alt="">--}}
+{{--            </div>--}}
+{{--          </div>--}}
 
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="img/clients/client-2.png" class="img-fluid" alt="">
-            </div>
-          </div>
+{{--          <div class="col-lg-3 col-md-4 col-xs-6">--}}
+{{--            <div class="client-logo">--}}
+{{--              <img src="img/clients/client-3.png" class="img-fluid" alt="">--}}
+{{--            </div>--}}
+{{--          </div>--}}
 
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="img/clients/client-3.png" class="img-fluid" alt="">
-            </div>
-          </div>
+{{--          <div class="col-lg-3 col-md-4 col-xs-6">--}}
+{{--            <div class="client-logo">--}}
+{{--              <img src="img/clients/client-4.png" class="img-fluid" alt="">--}}
+{{--            </div>--}}
+{{--          </div>--}}
 
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="img/clients/client-4.png" class="img-fluid" alt="">
-            </div>
-          </div>
+{{--          <div class="col-lg-3 col-md-4 col-xs-6">--}}
+{{--            <div class="client-logo">--}}
+{{--              <img src="img/clients/client-5.png" class="img-fluid" alt="">--}}
+{{--            </div>--}}
+{{--          </div>--}}
 
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="img/clients/client-5.png" class="img-fluid" alt="">
-            </div>
-          </div>
+{{--          <div class="col-lg-3 col-md-4 col-xs-6">--}}
+{{--            <div class="client-logo">--}}
+{{--              <img src="img/clients/client-6.png" class="img-fluid" alt="">--}}
+{{--            </div>--}}
+{{--          </div>--}}
 
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="img/clients/client-6.png" class="img-fluid" alt="">
-            </div>
-          </div>
+{{--          <div class="col-lg-3 col-md-4 col-xs-6">--}}
+{{--            <div class="client-logo">--}}
+{{--              <img src="img/clients/client-7.png" class="img-fluid" alt="">--}}
+{{--            </div>--}}
+{{--          </div>--}}
 
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="img/clients/client-7.png" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="img/clients/client-8.png" class="img-fluid" alt="">
-            </div>
-          </div>
+{{--          <div class="col-lg-3 col-md-4 col-xs-6">--}}
+{{--            <div class="client-logo">--}}
+{{--              <img src="img/clients/client-8.png" class="img-fluid" alt="">--}}
+{{--            </div>--}}
+{{--          </div>--}}
 
         </div>
 
@@ -570,9 +571,10 @@
 
         <div class="row wow fadeInUp">
 
-          <div class="col-lg-6">
-            <div class="map mb-4 mb-lg-0">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 312px;" allowfullscreen></iframe>
+          <div class="col-lg-6" >
+            <div class="map mb-4 mb-lg-0" >
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d201.01532241574466!2d31.161712615484042!3d30.96606474494348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sar!2seg!4v1685528392730!5m2!1sar!2seg"frameborder="0" style="border:0; width: 100%; height: 312px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+{{--              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 312px;" allowfullscreen></iframe>--}}
             </div>
           </div>
 

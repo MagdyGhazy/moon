@@ -16,14 +16,14 @@
                 <div class="content-header-left col-md-9 col-12 mb-2">
                     <div class="row breadcrumbs-top">
                         <div class="col-12">
-                            <h2 class="content-header-title float-left mb-0">Team</h2>
+                            <h2 class="content-header-title float-left mb-0">Clients</h2>
                             <div class="breadcrumb-wrapper">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
                                         <a href="{{route('admin.dashboard')}}">{{__('labels.fields.dashboard')}}</a>
                                     </li>
                                     <li class="breadcrumb-item">
-                                         Team
+                                         Clients
                                     </li>
 
                                     <li class="breadcrumb-item active">
@@ -52,10 +52,10 @@
                                         <h4 class="card-title">Add New</h4>
                                     </div>
                                     <div class="card-body">
-                                        <form class="form form-horizontal" method="post" action="{{route('admin.team.store')}}" enctype="multipart/form-data">
+                                        <form class="form form-horizontal" method="post" action="{{route('admin.client.store')}}" enctype="multipart/form-data">
                                             @csrf
                                             <div class="row">
-                                                <div class="col-12 mb-2" >
+                                                <div class="col-6" >
                                                     <div class="form-group" >
                                                         <label for="section">Name
                                                             <span class="text-danger">*</span>
@@ -64,61 +64,17 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-12 mb-2" >
-                                                    <div class="form-group" >
-                                                        <label for="section">Job
-                                                            <span class="text-danger">*</span>
-                                                        </label>
-                                                        <input type="text"  name="job" id="category_id" class="form-control">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-12 mb-2">
-                                                    <label for="section">Photo
+                                                <div class="col-6">
+                                                    <label for="logo">Logo
                                                         <span class="text-danger">*</span>
                                                     </label>
+
+
                                                     <div class="custom-file">
-                                                        <label for="" class="custom-file-label">Select File To Upload</label>
-                                                        <input type="file" name="image" id="file" class="custom-file-input">
+                                                        <label for="file" class="custom-file-label" > </label>
+                                                        <input type="file" name="logo" id="file" class="custom-file-input"  >
                                                     </div>
-                                                </div>
-
-
-                                                <div class="col-12 mb-2" >
-                                                    <div class="form-group" >
-                                                        <label for="section">FaceBook
-                                                            <span class="text-danger">*</span>
-                                                        </label>
-                                                        <input type="text"  name="fb" id="category_id" class="form-control">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-12 mb-2" >
-                                                    <div class="form-group" >
-                                                        <label for="section">Linked In
-                                                            <span class="text-danger">*</span>
-                                                        </label>
-                                                        <input type="text"  name="li" id="category_id" class="form-control">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-12 mb-2" >
-                                                    <div class="form-group" >
-                                                        <label for="section">Gmail
-                                                            <span class="text-danger">*</span>
-                                                        </label>
-                                                        <input type="text"  name="gm" id="category_id" class="form-control">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-12 mb-2" >
-                                                    <div class="form-group" >
-                                                        <label for="section">Instagram
-                                                            <span class="text-danger">*</span>
-                                                        </label>
-                                                        <input type="text"  name="ig" id="category_id" class="form-control">
-                                                    </div>
-                                                </div>
+                                                </div><br><br>
 
                                                 <div class="col-sm-9 offset-sm-3 mt-2">
                                                     <button type="submit" class="btn btn-primary mr-1">{{__('messages.static.save')}}</button>

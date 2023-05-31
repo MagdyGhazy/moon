@@ -51,7 +51,7 @@
                                         <h4 class="card-title">{{ __('messages.static.edit') }}</h4>
                                     </div>
                                     <div class="card-body">
-                                        <form class="form form-horizontal" method="post" enctype="multipart/form-data" action="{{ route('admin.team.update', $about->id) }}">
+                                        <form class="form form-horizontal" method="post" enctype="multipart/form-data" action="{{ route('admin.team.update', $about->id) }}"  >
                                             @csrf
                                             @method('put')
 
@@ -108,13 +108,21 @@
                                             </div>
 
                                             <br>
-                                            <div class="mb-3">
-                                                <label for="image" class="form-label">Photo</label>
-                                                <input type="file" class="form-control-file" name="image" >
-                                            </div>
+
+                                            <div class="col-6">
+                                                <label for="ig">Photo
+                                                    <span class="text-danger">*</span>
+                                                </label>
+
+
+                                                    <div class="custom-file">
+                                                        <label for="" class="custom-file-label"  >{{$about->image}} </label>
+                                                        <input type="file" name="image" id="file" class="custom-file-input"  >
+                                                    </div>
+                                            </div><br><br>
 
                                                         <div >
-                                                            <button type="submit"class="btn btn-info">update</button>
+                                                          <button type="submit"class="btn btn-info" >update</button>
                                                         </div>
                                         </form>
 

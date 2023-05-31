@@ -1,6 +1,8 @@
 <?php
 
 
+use App\Http\Controllers\ClientsController;
+use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
@@ -190,11 +192,14 @@ Route::middleware('auth:admin')->group(function (){
     Route::resource('team',TeamController::class);
 
 
-
-
     /**
      * ContactUsController
      */
-    Route::resource('contact',\App\Http\Controllers\ContactUsController::class);
+    Route::resource('contact',ContactUsController::class);
+
+    /**
+     * ClientsController
+     */
+    Route::resource('client',ClientsController::class);
 
 });

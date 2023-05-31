@@ -18,6 +18,7 @@ class TeamController extends Controller
     public function index()
     {
         $teams = Team::get();
+
         return view('admin.team.index',compact('teams'));
 
     }
@@ -92,13 +93,22 @@ class TeamController extends Controller
     public function update(Request $request,$id)
     {
         $about=Team::findorfail($id);
+
+
+        if ($request->image == ""){
+            $path = $about->image;
+        }
+        else {
+            $path = $this->uploadImage($request, 'team');
+        }
         $about->update([
-            'name'=> $request->name,
-            'job'=> $request->job,
-            'fb'=> $request->fb,
-            'li'=> $request->li,
-            'gm'=> $request->gm,
-            'ig'=> $request->ig,
+            'name' => $request->name,
+            'job' => $request->job,
+            'image' => $path,
+            'fb' => $request->fb,
+            'li' => $request->li,
+            'gm' => $request->gm,
+            'ig' => $request->ig,
         ]);
         return redirect()->route('admin.team.index');
 

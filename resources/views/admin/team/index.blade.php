@@ -67,10 +67,10 @@
                                         <thead>
                                         <tr>
                                             <th scope="col" style="width: 5%">#</th>
-                                            <th scope="col" style="width: 15%">name</th>
-                                            <th scope="col" style="width: 15%">job</th>
-                                            <th scope="col" style="width: 15%">image</th>
-                                            <th scope="col" style="width: 20%">social</th>
+                                            <th scope="col" style="width: 15%;text-align: center">name</th>
+                                            <th scope="col" style="width: 15%;text-align: center">job</th>
+                                            <th scope="col" style="width: 15%;text-align: center">image</th>
+                                            <th scope="col" style="width: 20%;text-align: center">social</th>
                                             <th scope="col" style="text-align: center ;width: 20%">handel</th>
 
                                         </tr>
@@ -81,13 +81,12 @@
                                         <tr>
                                                 <?php $i++; ?>
                                             <td rowspan="4" style="width: 5%">{{ $i }}</td>
-                                            <td rowspan="4" style="width: 15%">{{$team->name}}</td>
-                                            <td rowspan="4" style="width: 15%">{{$team->job}}</td>
-                                            <td rowspan="4" style="width: 15%"><img src="{{asset('img/'.$team->image)}}" class="img-fluid" alt=""></td>
-
-                                            <td style="width: 20%">{{$team->fb}}</td>
+                                            <td rowspan="4" style="width: 15%;text-align: center">{{$team->name}}</td>
+                                            <td rowspan="4" style="width: 15%;text-align: center">{{$team->job}}</td>
+                                            <td rowspan="4" style="width: 15%;text-align: center"><img src="{{asset('img/'.$team->image)}}" class="img-fluid" alt=""></td>
+                                            <td style="width: 20%;text-align: center">{{$team->fb}}</td>
                                             <td rowspan="4" style="width: 20% ;align-content: center">
-                                                <div class="row wow fadeInUp" style="justify-content: center ">
+                                                <div class="row wow fadeInUp" style="justify-content: center">
                                                         <span style="padding-left: 2%">
                                                                <a class="btn btn-primary" href="{{route('admin.team.edit', $team->id)}}" role="button"><i class="mr-50 fas fa-edit"></i></a>
                                                         </span>
@@ -106,13 +105,13 @@
 
                                         </tr>
                                         <tr>
-                                            <td >{{$team->li}}</td>
+                                            <td  style="width: 20%;text-align: center">{{$team->li}}</td>
                                         </tr>
                                         <tr>
-                                            <td >{{$team->gm}}</td>
+                                            <td   style="width: 20%;text-align: center">{{$team->gm}}</td>
                                         </tr>
                                         <tr>
-                                            <td >{{$team->ig}}</td>
+                                            <td   style="width: 20%;text-align: center">{{$team->ig}}</td>
                                         </tr>
                                         @endforeach
 {{--                                        //////////////////////////////////////--}}

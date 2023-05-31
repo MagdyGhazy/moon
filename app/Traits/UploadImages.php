@@ -12,4 +12,10 @@ trait UploadImages
         return $path;
     }
 
+    public function uploadLogo(Request $request,$folderName){
+        $logo = $request->file('logo')->getClientOriginalName();
+        $path = $request->file('logo')->storeAs($folderName,$logo,'save');
+        return $path;
+    }
+
 }

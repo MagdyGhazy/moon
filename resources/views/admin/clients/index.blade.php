@@ -12,7 +12,7 @@
                 <div class="content-header-left col-md-9 col-12 mb-2">
                     <div class="row breadcrumbs-top">
                         <div class="col-12">
-                            <h2 class="content-header-title float-left mb-0"> About Us</h2>
+                            <h2 class="content-header-title float-left mb-0"> Our CLients</h2>
                             <div class="breadcrumb-wrapper">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
@@ -20,11 +20,9 @@
                                     </li>
 
                                     <li class="breadcrumb-item active">
-                                         About Us
+                                    Our CLients
                                     </li>
-                                    <li class="breadcrumb-item active">
-                                        Main
-                                    </li>
+
                                 </ol>
                             </div>
                         </div>
@@ -41,7 +39,7 @@
                             <div class="card-header ">
                                 <div>
                                     @can('create-content')
-                                        <a title="{{__('messages.static.create')}}"  id="create-btn" href="{{route('admin.main.create')}}"
+                                        <a title="{{__('messages.static.create')}}"  id="create-btn" href="{{route('admin.client.create')}}"
                                            class="btn btn-icon btn-outline-primary">
                                             <i data-feather="plus"></i>  Add
                                         </a>
@@ -69,40 +67,40 @@
                                         <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col">title</th>
-                                            <th scope="col">discription</th>
-                                            <th scope="col">img</th>
+                                            <th scope="col">name</th>
+                                            <th scope="col">logo</th>
                                             <th scope="col">Handle</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                             <?php $i = 0; ?>
-                                        @foreach($Abouts as $about)
+                                        @foreach($clients as $client)
                                                 <?php $i++; ?>
                                             <td>{{ $i }}</td>
-                                                <td>{{$about->title}}</td>
-                                                <td>{{$about->discription}}</td>
-                                                <td>{{$about->img}}</td>
-                                                <td>
-                                                    <div class="row wow fadeInUp" style="justify-content: right ">
+                                            <td>{{$client->name}}</td>
+                                            <td><img src="{{asset('img/'.$client->logo)}}" style="width: 20%" alt=""></td>
+
+                                            <td>
+                                                <div class="row wow fadeInUp" style="justify-content: right ">
                                                         <span style="padding-left: 2% ;width: auto">
-                                                               <a class="btn btn-primary" href="{{route('admin.main.edit', $about->id)}}" role="button"><i class="mr-50 fas fa-edit"></i></a>
+                                                               <a class="btn btn-primary" href="{{route('admin.client.edit', $client->id)}}" role="button"><i class="mr-50 fas fa-edit"></i></a>
                                                         </span>
 
 
-                                                        <span>
-                                                    <form action="{{route('admin.main.destroy',$about->id)}}" method="post">
+                                                    <span>
+                                                    <form action="{{route('admin.client.destroy',$client->id)}}" method="post">
 
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit"class="btn btn-danger"> <i class="mr-50 fas fa-trash"></i></button>
                                                     </form>
                                                         </span>
-                                                    </div>
-                                                </td>
+                                                </div>
+                                            </td>
                                             </tr>
                                         @endforeach
-                                    </tbody>
+
+                                        </tbody>
 
 
                                     </table>

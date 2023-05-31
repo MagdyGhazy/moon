@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Storage;
 Route::redirect('/', 'admin/dashboard');
 Route::view('/otp', 'OTP');
 Route::view('/index', 'index');
-Route::get('index',[\App\Http\Controllers\test::class,'index']);
+Route::get('index',[IndexController::class,'index']);
 
 
 
