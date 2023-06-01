@@ -100,7 +100,6 @@ class ClientsController extends Controller
             'logo'=> $path,
         ]);
         return redirect()->route('admin.client.index');
-
     }
 
     /**

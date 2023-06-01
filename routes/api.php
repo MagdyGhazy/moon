@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\ClientsController;
+use App\Http\Controllers\Api\ContactUsController;
+use App\Http\Controllers\Api\TeamController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +26,29 @@ Route::prefix('v1')->group(function (){
     Route::get('shared_backgrounds/{id}',[\App\Http\Controllers\Web\Admin\SharedBackgroundsController::class,'show']);
     Route::post('notifications_token/store',[\App\Http\Controllers\Api\NotificationController::class,'storeToken']);
     Route::get('notifications',[\App\Http\Controllers\Api\NotificationController::class,'getNotifications']);
+});
+
+
+Route::controller(ClientsController::class)->group(function () {
+    Route::get('/clients', 'index');
+    Route::get('/clients/{id}', 'show');
+    Route::post('/insert/clients', 'store');
+    Route::post('/edit/clients/{id}', 'update');
+    Route::post('/del/clients/{id}', 'destroy');
+});
+
+Route::controller(TeamController::class)->group(function () {
+    Route::get('/team', 'index');
+    Route::get('/team/{id}', 'show');
+    Route::post('/insert/team', 'store');
+    Route::post('/edit/team/{id}', 'update');
+    Route::post('/del/team/{id}', 'destroy');
+});
+
+Route::controller(ContactUsController::class)->group(function () {
+    Route::get('/contact', 'index');
+    Route::get('/contact/{id}', 'show');
+    Route::post('/insert/contact', 'store');
+    Route::post('/edit/contact/{id}', 'update');
+    Route::post('/del/contact/{id}', 'destroy');
 });
