@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Content;
 use App\Models\Service;
+use App\Traits\UploadImages;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class AboutController extends Controller
 {
+    use UploadImages;
     /**
      * Display a listing of the resource.
      *
@@ -41,6 +43,7 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
+//        $path = $this->uploadImage($request,'detailsAbout');
         About::create([
            'title'=> $request->title,
            'discription'=> $request->discription,
@@ -85,6 +88,11 @@ class AboutController extends Controller
     public function update(Request $request,$id)
     {
         $about=About::findorfail($id);
+//        if ($request->image == ""){
+//            $path = $about->image;
+//        }else{
+//            $path = $this->uploadImage($request,'detailsAbout');
+//        }
         $about->update([
             'title'=>$request->title,
             'discription'=>$request->discription,

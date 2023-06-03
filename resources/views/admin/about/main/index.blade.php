@@ -71,7 +71,7 @@
                                             <th scope="col">#</th>
                                             <th scope="col">title</th>
                                             <th scope="col">discription</th>
-                                            <th scope="col">img</th>
+                                            <th scope="col">image</th>
                                             <th scope="col">Handle</th>
                                         </tr>
                                         </thead>
@@ -82,7 +82,7 @@
                                             <td>{{ $i }}</td>
                                                 <td>{{$about->title}}</td>
                                                 <td>{{$about->discription}}</td>
-                                                <td>{{$about->img}}</td>
+                                                <td style="width: 15%"><img src="{{asset('img/'.$about->image)}}" class="img-fluid" alt=""></td>
                                                 <td>
                                                     <div class="row wow fadeInUp" style="justify-content: right ">
                                                         <span style="padding-left: 2% ;width: auto">

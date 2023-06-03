@@ -66,12 +66,28 @@
 
                                                 <div class="col-12 mb-2" >
                                                     <div class="form-group" >
-                                                        <label for="section">Icon
-                                                            <span class="text-danger">*</span>
-                                                        </label>
-                                                        <input type="text"  name="icon" id="category_id" class="form-control">
+                                                        <label  for="settings.has_margins">Icon</label>
+                                                        <select class="form-control " name="icon" id="settings.has_margins">
+
+                                                                <option><i class="fa fa-shopping-bag">shopping-bag</i></option>
+                                                                <option><i class="fa fa-shopping-cart">shopping-cart</i></option>
+                                                                <option><i class="fa fa-photo">photo</i></option>
+                                                                <option><i class="fa fa-plane">plane</i></option>
+                                                        </select>
+
                                                     </div>
                                                 </div>
+
+
+{{--                                                <div class="col-12 mb-2">--}}
+{{--                                                    <label for="section">Icon--}}
+{{--                                                        <span class="text-danger">*</span>--}}
+{{--                                                    </label>--}}
+{{--                                                    <div class="custom-file">--}}
+{{--                                                        <label for="" class="custom-file-label">Select File To Upload</label>--}}
+{{--                                                        <input type="file" name="icon" id="file" class="custom-file-input">--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
 
                                                 <div class="col-12 mb-2" >
                                                     <div class="form-group" >

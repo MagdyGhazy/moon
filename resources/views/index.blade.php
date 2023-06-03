@@ -104,7 +104,7 @@
               @if($Aboutt->id == 1)
               @foreach($about as $aboutt)
             <div class="icon-box wow fadeInUp">
-              <div class="icon"><i class="{{$aboutt->icon}}"></i></div>
+              <div class="icon"><i class="fa fa-{{$aboutt->icon}}"></i></div>
               <h4 class="title"><a href="">{{$aboutt->title}}</a></h4>
               <p class="description">{{$aboutt->discription}}</p>
             </div>
@@ -130,7 +130,7 @@
 
           </div>
           <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
-            <img src="{{$Aboutt->img}}" class="img-fluid" alt="">
+              <img src="{{asset('img/'.$Aboutt->image)}}" class="img-fluid" alt="">
           </div>
         </div>
           @endforeach

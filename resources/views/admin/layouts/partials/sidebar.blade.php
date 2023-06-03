@@ -208,7 +208,7 @@
 
             </li>
 
-            <li class="nav-item has-sub @if (request()->is(['admin/main*', 'admin/details*'])) sidebar-group-active open @endif">
+            <li class="nav-item has-sub @if (request()->is(['admin/app*', 'admin/WEB*'])) sidebar-group-active open @endif">
                     <a href="#" class="d-flex align-items-center">
                         <i class="fas fa-info"></i>
                         <span class="menu-title text-truncate">
@@ -221,7 +221,7 @@
 
                             <li class="nav-item">
                                 <a href="{{ route('admin.app.index') }}"
-                                   class="nav-link {{ request()->routeIs('admin.main*') ? 'active' : '' }}"
+                                   class="nav-link {{ request()->routeIs('admin.app*') ? 'active' : '' }}"
                                    data-link="/admin/admins">
                                     <i class="fas fa-users-cog"></i>
                                     <span
@@ -233,7 +233,7 @@
 
                             <li class="nav-item">
                                 <a href="{{ route('admin.WEB.index') }}" data-link="/admin/roles"
-                                   class="nav-link {{ request()->routeIs('admin.details*') ? 'active' : '' }} ">
+                                   class="nav-link {{ request()->routeIs('admin.WEB*') ? 'active' : '' }} ">
                                     <i class="fas fa-user-tag"></i>
                                     <span class="menu-title text-truncate">
                                         web

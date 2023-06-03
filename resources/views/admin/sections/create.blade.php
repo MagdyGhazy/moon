@@ -131,7 +131,7 @@
                                                             <input type="file"
                                                                    style="visibility: hidden" class="form-control @error('image') is-invalid @enderror"
                                                                    name="image"
-                                                                   onchange="imagePreview()"
+                                                                       onchange="imagePreview()"
                                                                    accept="image/*"
                                                                    id="image">
                                                             <img id="image-preview" onclick="document.getElementById('image').click()" src="{{asset('assets/admin/app-assets/images/default/default.png')}}"

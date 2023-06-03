@@ -57,7 +57,7 @@
 
 
 
-                                            <div  style="margin: 5px ">
+                                            <div class="col-12 mb-2">
                                                 <label for="title_ar">Title
                                                     <span class="text-danger">*</span>
                                                 </label>
@@ -65,25 +65,31 @@
                                                 <input type="text"  style="width: max-content;" class="form-control " id="title_ar" name="title" value="{{$about->title}}"required>
                                             </div>
 
-                                            <div  style="margin: 5px ">
-                                                <label for="title_ar">Icon
-                                                    <span class="text-danger">*</span>
-                                                </label>
+                                            <div class="col-12 mb-2" >
+                                                <div class="form-group" >
+                                                    <label  for="settings.has_margins">Icon</label>
+                                                    <select class="form-control " name="icon" id="settings.has_margins">
 
-                                                <input type="text"  style="width: max-content;" class="form-control " id="title_ar" name="icon" value="{{$about->icon}}"required>
+                                                        <option @if($about->icon =="shopping-bag") selected @endif><i class="fa fa-shopping-bag">shopping-bag</i></option>
+                                                        <option @if($about->icon =="shopping-cart") selected @endif><i class="fa fa-shopping-cart">shopping-cart</i></option>
+                                                        <option @if($about->icon =="photo") selected @endif><i class="fa fa-photo">photo</i></option>
+                                                        <option @if($about->icon =="plane") selected @endif><i class="fa fa-plane">plane</i></option>
+                                                    </select>
+
+                                                </div>
                                             </div>
 
 
-                                          <div  style="margin: 5px">
+                                          <div  class="col-12 mb-2">
                                               <label for="description_ar">Discription
                                                   <span class="text-danger">*</span>
                                               </label>
                                               <textarea class="form-control"rows="3" name="discription">{{$about->discription}}</textarea>
                                           </div><br>
-
-                                                        <div >
-                                                            <button type="submit"class="btn btn-danger">update</button>
-                                                        </div>
+                                            <div class="col-sm-9 offset-sm-3 mt-2">
+                                                <button type="submit" class="btn btn-primary mr-1">{{__('messages.static.save')}}</button>
+                                                <button type="reset" class="btn btn-outline-secondary">{{__('messages.static.reset')}}</button>
+                                            </div>
                                         </form>
 
                                     </div>

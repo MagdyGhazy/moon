@@ -65,15 +65,19 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-12 mb-2" >
-                                                    <div class="form-group" >
-                                                        <label for="section">Img
-                                                            <span class="text-danger">*</span>
-                                                        </label>
-                                                        <input type="text"  name="img" id="category_id" class="form-control">
 
+                                                <div class="col-12 mb-2">
+                                                    <label for="section">Image
+                                                        <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="custom-file">
+                                                        <label for="" class="custom-file-label">Select File To Upload</label>
+                                                        <input type="file" name="image" id="file" class="custom-file-input">
                                                     </div>
                                                 </div>
+
+
+
 
                                                 <div class="col-12 mb-2" >
                                                     <div class="form-group" >

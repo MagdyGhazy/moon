@@ -51,41 +51,50 @@
                                         <h4 class="card-title">{{ __('messages.static.edit') }}</h4>
                                     </div>
                                     <div class="card-body">
-                                        <form class="form form-horizontal" method="post" enctype="multipart/form-data" action="{{ route('admin.main.update', $about->id) }}">
+                                        <form class="form form-horizontal" method="post" action="{{ route('admin.main.update', $about->id) }}" enctype="multipart/form-data">
                                             @csrf
+
                                             @method('put')
+                                            <div class="row">
+                                                <div class="col-12 mb-2" >
+                                                    <div class="form-group" >
+                                                        <label for="section">Title
+                                                            <span class="text-danger">*</span>
+                                                        </label>
+                                                        <input type="text"  name="title" id="category_id" class="form-control" value="{{$about->title}}">
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-12 mb-2">
+                                                    <label for="section">Image
+                                                        <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="custom-file">
+                                                        <label for="" class="custom-file-label">{{$about->image}}</label>
+                                                        <input type="file" name="image" id="file" class="custom-file-input">
+                                                    </div>
+                                                </div>
 
 
 
-                                            <div  style="margin: 5px ">
-                                                <label for="title_ar">Title
-                                                    <span class="text-danger">*</span>
-                                                </label>
 
-                                                <input type="text"  style="width: max-content;" class="form-control " id="title_ar" name="title" value="{{$about->title}}"required>
+                                                <div class="col-12 mb-2" >
+                                                    <div class="form-group" >
+                                                        <label for="section">Discription
+                                                            <span class="text-danger">*</span>
+                                                        </label>
+                                                        <textarea name="discription" id="category_id" class="form-control" >{{$about->discription}}</textarea>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-9 offset-sm-3 mt-2">
+                                                    <button type="submit" class="btn btn-primary mr-1">{{__('messages.static.save')}}</button>
+                                                    <button type="reset" class="btn btn-outline-secondary">{{__('messages.static.reset')}}</button>
+                                                </div>
                                             </div>
-
-                                            <div  style="margin: 5px ">
-                                                <label for="title_ar">Img
-                                                    <span class="text-danger">*</span>
-                                                </label>
-
-                                                <input type="text"  style="width: max-content;" class="form-control " id="title_ar" name="img" value="{{$about->img}}"required>
-                                            </div>
-
-
-                                          <div  style="margin: 5px">
-                                              <label for="description_ar">Discription
-                                                  <span class="text-danger">*</span>
-                                              </label>
-                                              <textarea class="form-control"rows="3" name="discription">{{$about->discription}}</textarea>
-                                          </div><br>
-
-                                                        <div >
-                                                            <button type="submit"class="btn btn-danger">update</button>
-                                                        </div>
                                         </form>
-
                                     </div>
                                 </div>
                             </div>

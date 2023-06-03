@@ -82,8 +82,7 @@
                                             <td style="width: 20%">{{ $i }}</td>
                                             <td style="width: 20%">{{$about->title}}</td>
                                             <td style="width: 20%">{{$about->discription}}</td>
-                                            <td style="width: 20%">{{$about->icon}}</td>
-
+                                            <td style="width: 20%"><i class="fa fa-{{$about->icon}}"></i></td>
                                             <td>
                                                 <div class="row wow fadeInUp" style="justify-content: center ">
                                                     <span style="padding-left: 2%">

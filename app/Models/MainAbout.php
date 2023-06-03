@@ -11,6 +11,6 @@ class MainAbout extends Model
     protected $fillable = [
         'title',
         'discription',
-        'img',
+        'image',
     ];
 }

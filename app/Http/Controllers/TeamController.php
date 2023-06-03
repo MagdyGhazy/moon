@@ -129,8 +129,5 @@ class TeamController extends Controller
         return redirect()->route('admin.team.index');
     }
 
-    public function save(Request $request){
-
-    }
 }
 

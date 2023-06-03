@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\MainAbout;
+use App\Traits\UploadImages;
 use Illuminate\Http\Request;
 
 class MainAboutController extends Controller
 {
+    use UploadImages;
     /**
      * Display a listing of the resource.
      *
@@ -36,10 +38,13 @@ class MainAboutController extends Controller
      */
     public function store(Request $request)
     {
+
+        $path = $this->uploadImage($request,'mainAbout');
+
         MainAbout::create([
             'title'=> $request->title,
             'discription'=> $request->discription,
-            'img'=> $request->img,
+            'image'=> $path,
         ]);
 
         return redirect()->route('admin.main.index');
@@ -80,10 +85,17 @@ class MainAboutController extends Controller
     public function update(Request $request,$id)
     {
         $about=MainAbout::findorfail($id);
+
+        if ($request->image == ""){
+            $path = $about-> image;
+        }else{
+            $path=$this->uploadImage($request,'mainAbout');
+        }
+
         $about->update([
             'title'=>$request->title,
             'discription'=>$request->discription,
-            'img'=> $request->img,
+            'image'=> $path,
         ]);
         return redirect()->route('admin.main.index');
 

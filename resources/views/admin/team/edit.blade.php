@@ -117,7 +117,7 @@
 
                                                     <div class="custom-file">
                                                         <label for="" class="custom-file-label"  >{{$about->image}} </label>
-                                                        <input type="file" name="image" id="file" class="custom-file-input"  >
+                                                        <input type="file" name="image" id="file" class="custom-file-input"  onchange="imagePreview()" >
                                                     </div>
                                             </div><br><br>
 

@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Api\ClientsController;
 use App\Http\Controllers\Api\ContactUsController;
+use App\Http\Controllers\Api\DetailsAboutController;
+use App\Http\Controllers\Api\MainAboutController;
 use App\Http\Controllers\Api\TeamController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -51,4 +53,21 @@ Route::controller(ContactUsController::class)->group(function () {
     Route::post('/insert/contact', 'store');
     Route::post('/edit/contact/{id}', 'update');
     Route::post('/del/contact/{id}', 'destroy');
+});
+
+Route::controller(MainAboutController::class)->group(function () {
+    Route::get('/main', 'index');
+    Route::get('/main/{id}', 'show');
+    Route::post('/insert/main', 'store');
+    Route::post('/edit/main/{id}', 'update');
+    Route::post('/del/main/{id}', 'destroy');
+});
+
+
+Route::controller(DetailsAboutController::class)->group(function () {
+    Route::get('/details', 'index');
+    Route::get('/details/{id}', 'show');
+    Route::post('/insert/details', 'store');
+    Route::post('/edit/details/{id}', 'update');
+    Route::post('/del/details/{id}', 'destroy');
 });
