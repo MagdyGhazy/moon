@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ContactUs;
+use App\Models\UserFeed;
+use App\Traits\UploadImages;
 use Illuminate\Http\Request;
 
-class ContactUsController extends Controller
+class UserFeedController extends Controller
 {
+    use UploadImages;
     /**
      * Display a listing of the resource.
      *
@@ -14,9 +16,9 @@ class ContactUsController extends Controller
      */
     public function index()
     {
-        $contacts = ContactUs::get();
+        $users = UserFeed::get();
 
-        return view('admin.contact.index',compact('contacts',));
+        return view('admin.userfeed.index',compact('users'));
     }
 
     /**
@@ -26,7 +28,7 @@ class ContactUsController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -37,23 +39,26 @@ class ContactUsController extends Controller
      */
     public function store(Request $request)
     {
-        ContactUs::create([
+        $path = $this->uploadImage($request,'users');
+
+        UserFeed::create([
             'name'=> $request->name,
-            'email'=> $request->email,
-            'subject'=> $request->subject,
-            'message'=> $request->message,
+            'comment'=> $request->comment,
+            'image'=>$path,
+
         ]);
 
-        return view('index');
+        return redirect()->back();
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ContactUs  $contactUs
+     * @param  \App\Models\UserFeed  $userFeed
      * @return \Illuminate\Http\Response
      */
-    public function show(ContactUs $contactUs)
+    public function show(UserFeed $userFeed)
     {
         //
     }
@@ -61,37 +66,36 @@ class ContactUsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ContactUs  $contactUs
+     * @param  \App\Models\UserFeed  $userFeed
      * @return \Illuminate\Http\Response
      */
-    public function edit(ContactUs $id)
+    public function edit(UserFeed $userFeed)
     {
-
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ContactUs  $contactUs
+     * @param  \App\Models\UserFeed  $userFeed
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ContactUs $id)
+    public function update(Request $request, UserFeed $userFeed)
     {
-
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ContactUs  $contactUs
+     * @param  \App\Models\UserFeed  $userFeed
      * @return \Illuminate\Http\Response
      */
-    public function destroy( $id)
+    public function destroy($id)
     {
-        ContactUs::findorfail($id)->delete();
+        UserFeed::findorfail($id)->delete();
 
-
-        return redirect()->route('admin.contact.index');
+        return redirect()->back();
     }
 }

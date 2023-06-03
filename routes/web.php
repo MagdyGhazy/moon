@@ -25,6 +25,7 @@ Route::get('index',[IndexController::class,'index']);
 
 
 
+
 Route::get('/editor/metadata', [\App\Http\Controllers\EditorJsController::class,'getMetaDataFromUrl'])->name('editor.metadata');
 Route::post('/editor/upload/file', [\App\Http\Controllers\EditorJsController::class,'uploadFile'])->name('editor.upload.file');
 Route::post('/editor/upload/image', [\App\Http\Controllers\EditorJsController::class,'uploadImage'])->name('editor.upload.image');

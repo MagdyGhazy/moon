@@ -174,17 +174,12 @@ Route::middleware('auth:admin')->group(function (){
     Route::resource('main',\App\Http\Controllers\MainAboutController::class);
     Route::resource('details',\App\Http\Controllers\AboutController::class);
 
-
     /**
      * ServiceController
      */
     Route::resource('servces',\App\Http\Controllers\ServiceController::class);
     Route::resource('app',\App\Http\Controllers\AppController::class);
     Route::resource('WEB',\App\Http\Controllers\WebController::class);
-
-
-
-
 
     /**
      * TeamController
@@ -201,5 +196,11 @@ Route::middleware('auth:admin')->group(function (){
      * ClientsController
      */
     Route::resource('client',ClientsController::class);
+
+    /**
+     * FeedBackController
+     */
+    Route::resource('userfeed',\App\Http\Controllers\UserFeedController::class);
+    Route::resource('adminfeed',\App\Http\Controllers\AdminFeedController::class);
 
 });

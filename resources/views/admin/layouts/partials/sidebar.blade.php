@@ -286,6 +286,40 @@
             </li>
 
 
+            <li class="nav-item has-sub @if (request()->is(['admin/userfeed*', 'admin/adminfeed*'])) sidebar-group-active open @endif">
+                <a href="#" class="d-flex align-items-center">
+                    <i class="fas fa-info"></i>
+                    <span class="menu-title text-truncate">
+                           Feedbak
+                        </span>
+                </a>
+
+                <ul class="menu-content">
+
+                    <li class="nav-item">
+                        <a href="{{ route('admin.userfeed.index') }}"
+                           class="nav-link {{ request()->routeIs('admin.main*') ? 'active' : '' }}"
+                           data-link="/admin/admins">
+                            <i class="fas fa-users-cog"></i>
+                            <span
+                                class="menu-title text-truncate">User</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route('admin.adminfeed.index') }}" data-link="/admin/roles"
+                           class="nav-link {{ request()->routeIs('admin.details*') ? 'active' : '' }} ">
+                            <i class="fas fa-user-tag"></i>
+                            <span class="menu-title text-truncate">
+                                        Admin
+                                    </span>
+                        </a>
+                    </li>
+                </ul>
+
+            </li>
+
+
             </ul>
          </div>
     </div>

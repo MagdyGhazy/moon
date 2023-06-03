@@ -670,16 +670,59 @@
               <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
               <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
             </div>
-
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit"  value="Subscribe">
-            </form>
-          </div>
+            <div class="col-lg-3 col-md-6 footer-newsletter">
+                <h4>     Send Feedback</h4>
+                <div class="card-body ">
+                    <form class="form form-horizontal" method="post" action="{{route('admin.userfeed.store')}}" enctype="multipart/form-data">
+                        @csrf
+                        <div class="row">
+                            <div class="col-sm-6 mb-2" >
+                                <div class="form-group" >
+                                    <label for="section">Name
+
+                                    </label>
+                                    <input type="text"  name="name" id="category_id" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 mb-2">
+                                <label for="section">Photo
+
+                                </label>
+                                <div class="custom-file">
+                                    <label for="" class="custom-file-label"></label>
+                                    <input type="file" name="image" id="file" class="custom-file-input" >
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 mb-sm-1">
+                                <textarea class="form-control" name="comment" rows="1" data-rule="required" data-msg="Please write something for us" placeholder="COMMENT"></textarea>
+                                <div class="validation"></div>
+                            </div>
+
+                            <div  class="col-sm-6 mb-2">
+
+                                <button type="submit" class="btn btn-primary mr-1">Send</button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+
+{{--          <div class="col-lg-3 col-md-6 footer-newsletter">--}}
+{{--            <h4>Our Newsletter</h4>--}}
+{{--            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>--}}
+{{--            <form action="" method="post">--}}
+{{--              <input type="email" name="email"><input type="submit"  value="Subscribe">--}}
+{{--            </form>--}}
+{{--          </div>--}}
+
+
 
         </div>
       </div>

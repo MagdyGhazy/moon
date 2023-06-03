@@ -141,7 +141,7 @@
                                                             <label  for="state">{{ __('labels.fields.state') }}</label>
                                                             <select class="form-control @error('state') is-invalid @enderror" name="state" id="state">
                                                                 @foreach(\App\Enums\CategoryState::values() as $value)
-                                                                <option value="{{$value}}"> {{__('labels.enum.category.state.'.$value)}}</option>
+                                                                <option value="{{$value}}" @if((int)old('type') === $value) selected @endif> {{__('labels.enum.category.state.'.$value)}}</option>
                                                                 @endforeach
                                                             </select>
                                                             @error("state")

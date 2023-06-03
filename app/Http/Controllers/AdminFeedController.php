@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ContactUs;
+use App\Models\AdminFeed;
+use App\Models\UserFeed;
 use Illuminate\Http\Request;
+use function MongoDB\BSON\toJSON;
 
-class ContactUsController extends Controller
+class AdminFeedController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +16,9 @@ class ContactUsController extends Controller
      */
     public function index()
     {
-        $contacts = ContactUs::get();
+        $users = AdminFeed::get();
 
-        return view('admin.contact.index',compact('contacts',));
+        return view('admin.adminfeed.index',compact('users'));
     }
 
     /**
@@ -26,7 +28,7 @@ class ContactUsController extends Controller
      */
     public function create()
     {
-
+        return view('admin.adminfeed.create');
     }
 
     /**
@@ -37,23 +39,28 @@ class ContactUsController extends Controller
      */
     public function store(Request $request)
     {
-        ContactUs::create([
-            'name'=> $request->name,
-            'email'=> $request->email,
-            'subject'=> $request->subject,
-            'message'=> $request->message,
+
+        $Search = UserFeed::select('*')->where('id','=',$request->commentId)->get();
+
+
+        AdminFeed::create([
+
+            'name'=>$Search[0]->name,
+            'comment'=>$Search[0]->comment,
+            'image'=>$Search[0]->image,
         ]);
 
-        return view('index');
+        return redirect()->route('admin.adminfeed.index');
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ContactUs  $contactUs
+     * @param  \App\Models\AdminFeed  $adminFeed
      * @return \Illuminate\Http\Response
      */
-    public function show(ContactUs $contactUs)
+    public function show(AdminFeed $adminFeed)
     {
         //
     }
@@ -61,37 +68,36 @@ class ContactUsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ContactUs  $contactUs
+     * @param  \App\Models\AdminFeed  $adminFeed
      * @return \Illuminate\Http\Response
      */
-    public function edit(ContactUs $id)
+    public function edit(AdminFeed $adminFeed)
     {
-
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ContactUs  $contactUs
+     * @param  \App\Models\AdminFeed  $adminFeed
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ContactUs $id)
+    public function update(Request $request, AdminFeed $adminFeed)
     {
-
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ContactUs  $contactUs
+     * @param  \App\Models\AdminFeed  $adminFeed
      * @return \Illuminate\Http\Response
      */
-    public function destroy( $id)
+    public function destroy($id)
     {
-        ContactUs::findorfail($id)->delete();
+        AdminFeed::findorfail($id)->delete();
 
-
-        return redirect()->route('admin.contact.index');
+        return redirect()->back();
     }
 }
