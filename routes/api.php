@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\Api\AdminFeedController;
 use App\Http\Controllers\Api\ClientsController;
 use App\Http\Controllers\Api\ContactUsController;
 use App\Http\Controllers\Api\DetailsAboutController;
 use App\Http\Controllers\Api\MainAboutController;
 use App\Http\Controllers\Api\TeamController;
+use App\Http\Controllers\Api\UserFeedController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -70,4 +72,20 @@ Route::controller(DetailsAboutController::class)->group(function () {
     Route::post('/insert/details', 'store');
     Route::post('/edit/details/{id}', 'update');
     Route::post('/del/details/{id}', 'destroy');
+});
+
+Route::controller(UserFeedController::class)->group(function () {
+    Route::get('/userfeed', 'index');
+    Route::get('/userfeed/{id}', 'show');
+    Route::post('/insert/userfeed', 'store');
+    Route::post('/edit/userfeed/{id}', 'update');
+    Route::post('/del/userfeed/{id}', 'destroy');
+});
+
+Route::controller(AdminFeedController::class)->group(function () {
+    Route::get('/adminfeed', 'index');
+    Route::get('/adminfeed/{id}', 'show');
+    Route::post('/insert/adminfeed', 'store');
+    Route::post('/edit/adminfeed/{id}', 'update');
+    Route::post('/del/adminfeed/{id}', 'destroy');
 });

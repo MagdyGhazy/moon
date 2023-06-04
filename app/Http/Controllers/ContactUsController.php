@@ -43,8 +43,9 @@ class ContactUsController extends Controller
             'subject'=> $request->subject,
             'message'=> $request->message,
         ]);
+        $name = explode(" ", $request->name);
 
-        return view('index');
+        return "Thanks {$name[0]} !  We Received Your Email";
     }
 
     /**

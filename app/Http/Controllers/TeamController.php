@@ -41,7 +41,11 @@ class TeamController extends Controller
     public function store(Request $request)
     {
 
-        $path = $this->uploadImage($request,'team');
+        if ($request->image == "") {
+            $path = $request->image;
+        }else{
+            $path = $this->uploadImage($request, 'team');
+        }
 
         Team::create([
             'name'=> $request->name,

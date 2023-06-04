@@ -39,8 +39,11 @@ class UserFeedController extends Controller
      */
     public function store(Request $request)
     {
-        $path = $this->uploadImage($request,'users');
-
+        if ($request->image == "") {
+            $path = $request->image;
+        }else{
+            $path = $this->uploadImage($request, 'users');
+        }
         UserFeed::create([
             'name'=> $request->name,
             'comment'=> $request->comment,

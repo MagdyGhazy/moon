@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\AdminFeed;
 use App\Models\app;
 use App\Models\Clients;
 use App\Models\MainAbout;
@@ -22,6 +23,7 @@ class IndexController extends Controller
         $web = Web::get();
         $app = app::get();
         $clients = Clients::get();
-        return view('index', compact('about', 'About', 'Services', 'teams', 'web', 'app','clients'));
+        $feeds = AdminFeed::get();
+        return view('index', compact('about', 'About', 'Services', 'teams', 'web', 'app','clients','feeds'));
     }
 }

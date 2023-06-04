@@ -347,50 +347,52 @@
 
             <div class="owl-carousel testimonials-carousel wow fadeInUp">
 
+                @foreach($feeds as $feed)
               <div class="testimonial-item">
-                <img src="img/testimonial-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-                <p>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                </p>
+              @if($feed->image == null)
+                      <img src="{{asset('assets/images/no_user.png')}}" class="testimonial-img" alt="">
+                  @else
+                <img src="{{asset('img/'.$feed->image)}}" class="testimonial-img" alt="">
+                  @endif
+                <h3>{{$feed->name}}</h3>
+                <p>{{$feed->comment}}</p>
               </div>
+                @endforeach
+{{--              <div class="testimonial-item">--}}
+{{--                <img src="img/testimonial-2.jpg" class="testimonial-img" alt="">--}}
+{{--                <h3>Sara Wilsson</h3>--}}
+{{--                <h4>Designer</h4>--}}
+{{--                <p>--}}
+{{--                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.--}}
+{{--                </p>--}}
+{{--              </div>--}}
 
-              <div class="testimonial-item">
-                <img src="img/testimonial-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-                <p>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                </p>
-              </div>
+{{--              <div class="testimonial-item">--}}
+{{--                <img src="img/testimonial-3.jpg" class="testimonial-img" alt="">--}}
+{{--                <h3>Jena Karlis</h3>--}}
+{{--                <h4>Store Owner</h4>--}}
+{{--                <p>--}}
+{{--                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.--}}
+{{--                </p>--}}
+{{--              </div>--}}
 
-              <div class="testimonial-item">
-                <img src="img/testimonial-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-                <p>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                </p>
-              </div>
+{{--              <div class="testimonial-item">--}}
+{{--                <img src="img/testimonial-4.jpg" class="testimonial-img" alt="">--}}
+{{--                <h3>Matt Brandon</h3>--}}
+{{--                <h4>Freelancer</h4>--}}
+{{--                <p>--}}
+{{--                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.--}}
+{{--                </p>--}}
+{{--              </div>--}}
 
-              <div class="testimonial-item">
-                <img src="img/testimonial-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-                <p>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                </p>
-              </div>
-
-              <div class="testimonial-item">
-                <img src="img/testimonial-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-                <p>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                </p>
-              </div>
+{{--              <div class="testimonial-item">--}}
+{{--                <img src="img/testimonial-5.jpg" class="testimonial-img" alt="">--}}
+{{--                <h3>John Larson</h3>--}}
+{{--                <h4>Entrepreneur</h4>--}}
+{{--                <p>--}}
+{{--                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.--}}
+{{--                </p>--}}
+{{--              </div>--}}
 
             </div>
 
@@ -597,7 +599,7 @@
             <div class="form">
               <div id="sendmessage">Your message has been sent. Thank you!</div>
               <div id="errormessage"></div>
-              <form method="post" action="{{route('admin.contact.store')}}" role="form" class="contactForm">
+              <form method="post" action="{{route('admin.contact.store')}}" role="form" class="contactForm" >
                   @csrf
                 <div class="form-row">
                   <div class="form-group col-lg-6">
@@ -683,7 +685,7 @@
                                     <label for="section">Name
 
                                     </label>
-                                    <input type="text"  name="name" id="category_id" class="form-control">
+                                    <input type="text"  name="name" id="category_id" class="form-control" required>
                                 </div>
                             </div>
 
@@ -698,7 +700,7 @@
                             </div>
 
                             <div class="col-sm-12 mb-sm-1">
-                                <textarea class="form-control" name="comment" rows="1" data-rule="required" data-msg="Please write something for us" placeholder="COMMENT"></textarea>
+                                <textarea class="form-control" name="comment" rows="1" data-rule="required" data-msg="Please write something for us" placeholder="COMMENT" required></textarea>
                                 <div class="validation"></div>
                             </div>
 
