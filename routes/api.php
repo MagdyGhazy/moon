@@ -1,12 +1,14 @@
 <?php
 
 use App\Http\Controllers\Api\AdminFeedController;
+use App\Http\Controllers\Api\appbcontroller;
 use App\Http\Controllers\Api\ClientsController;
 use App\Http\Controllers\Api\ContactUsController;
 use App\Http\Controllers\Api\DetailsAboutController;
 use App\Http\Controllers\Api\MainAboutController;
 use App\Http\Controllers\Api\TeamController;
 use App\Http\Controllers\Api\UserFeedController;
+use App\Http\Controllers\Api\webcontroller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -47,6 +49,21 @@ Route::controller(TeamController::class)->group(function () {
     Route::post('/insert/team', 'store');
     Route::post('/edit/team/{id}', 'update');
     Route::post('/del/team/{id}', 'destroy');
+});
+
+Route::controller(webcontroller::class)->group(function () {
+    Route::get('/webpro', 'index');
+    Route::get('/webpro/{id}', 'show');
+    Route::post('/insert/webpro', 'store');
+    Route::post('/edit/webpro/{id}', 'update');
+    Route::post('/del/webpro/{id}', 'destroy');
+});
+Route::controller(appbcontroller::class)->group(function () {
+    Route::get('/Apppro', 'index');
+    Route::get('/Apppro/{id}', 'show');
+    Route::post('/insert/Apppro', 'store');
+    Route::post('/edit/Apppro/{id}', 'update');
+    Route::post('/del/Apppro/{id}', 'destroy');
 });
 
 Route::controller(ContactUsController::class)->group(function () {

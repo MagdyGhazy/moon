@@ -91,7 +91,7 @@ Route::middleware('auth:admin')->group(function (){
         Route::get('shared_backgrounds/search/{section}','destroy' )->name('shared_backgrounds.search');
     });
 
-   // Route::resource('shared_backgrounds',\App\Http\Controllers\Web\Admin\SharedBackgroundsController::class)->only(['index','store','destroy','create']);
+   // Route::resource('shared_backgrounds',\AppPortofile\Http\Controllers\Web\Admin\SharedBackgroundsController::class)->only(['index','store','destroy','create']);
 
     Route::controller(\App\Http\Controllers\Web\Admin\SectionKeywordController::class)->group(function (){
         Route::get('section_keywords/delete/{id}','destroy' )->name('section_keywords.delete');
@@ -134,7 +134,7 @@ Route::middleware('auth:admin')->group(function (){
 
 
     Route::get('paragraphs/index',[\App\Http\Controllers\Web\Admin\ParagraphController::class,'index'])->name('paragraphs.index');
-   // Route::resource('paragraphs', \App\Http\Controllers\Web\Admin\ParagraphController::class);
+   // Route::resource('paragraphs', \AppPortofile\Http\Controllers\Web\Admin\ParagraphController::class);
 
     Route::get('paragraph_keyword/delete/{id}',[App\Http\Controllers\Web\Admin\ParagraphKeywordController::class, 'destroy'])->name('paragraph_keyword.delete');
     Route::get('paragraphs/{paragraph_id}/paragraph_keyword/add/{keyword_id}',[App\Http\Controllers\Web\Admin\ParagraphKeywordController::class, 'store'])->name('paragraph_keyword.store');
