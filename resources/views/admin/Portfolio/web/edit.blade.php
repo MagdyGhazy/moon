@@ -57,27 +57,26 @@
 
 
 
-                                            <div  style="margin: 5px ">
+                                            <div >
                                                 <label for="Services">WebName
                                                     <span class="text-danger">*</span>
                                                 </label>
 
-                                                <input type="text"  style="width: max-content;" class="form-control " id="Services" name="WebName" value="{{$Portfolio->WebName}}"required>
+                                                <input type="text"  class="form-control " id="Services" name="WebName" value="{{$Portfolio->WebName}}"required>
                                             </div>
-                                            <div  style="margin: 5px ">
-                                                <label for="icon">WebImage
-                                                    <span class="text-danger">*</span>
-                                                </label>
-
-                                                <input type="text"  style="width: max-content;" class="form-control " id="Services" name="WebImage" value="{{$Portfolio->WebImage}}"required>
+                                            <br>
+                                            <span class="text-danger">*</span> webImage
+                                            <div class="custom-file">
+                                                <label for="" class="custom-file-label" >{{$Portfolio->WebImage}} </label>
+                                                <input type="file" name="WebImage" id="file" class="custom-file-input"  onchange="imagePreview()"  value="">
                                             </div>
 
 
-                                            <div  style="margin: 5px">
+                                            <div >
                                                 <label for="discription">WebLinke
                                                     <span class="text-danger">*</span>
                                                 </label>
-                                                <input type="text"  style="width: max-content;" class="form-control " id="Services" name="WebLinke" value="{{$Portfolio->WebLinke}}"required>
+                                                <input type="text"   class="form-control " id="Services" name="WebLinke" value="{{$Portfolio->WebLinke}}"required>
                                             </div><br>
 
                                             <div >

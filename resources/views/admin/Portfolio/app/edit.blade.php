@@ -57,28 +57,29 @@
 
 
 
-                                            <div  style="margin: 5px ">
+                                            <div>
                                                 <label for="Services">AppName
                                                     <span class="text-danger">*</span>
                                                 </label>
 
-                                                <input type="text"  style="width: max-content;" class="form-control " id="Services" name="AppName" value="{{$Portfolio->AppName}}"required>
-                                            </div>
-                                            <div  style="margin: 5px ">
-                                                <label for="icon">AppImage
-                                                    <span class="text-danger">*</span>
-                                                </label>
+                                                <input type="text"   class="form-control " id="Services" name="AppName" value="{{$Portfolio->AppName}}"required>
+                                            </div><br>
 
-                                                <input type="text"  style="width: max-content;" class="form-control " id="Services" name="AppImage" value="{{$Portfolio->AppImage}}"required>
-                                            </div>
-
-
-                                            <div  style="margin: 5px">
+                                            <div>
                                                 <label for="discription">AppLink
                                                     <span class="text-danger">*</span>
                                                 </label>
-                                                <input type="text"  style="width: max-content;" class="form-control " id="Services" name="AppLink" value="{{$Portfolio->AppLink}}"required>
+                                                <input type="text"  class="form-control " id="Services" name="AppLink" value="{{$Portfolio->AppLink}}"required>
                                             </div><br>
+
+
+                                            webImage <span class="text-danger">*</span>
+                                            <div class="custom-file">
+                                                <label for="" class="custom-file-label"  >{{$Portfolio->AppImage}} </label>
+                                                <input type="file" name="AppImage" id="file" class="custom-file-input"  onchange="imagePreview()" >
+                                            </div><br>
+                                            <br>
+
 
                                             <div >
                                                 <button type="submit"class="btn btn-danger">update</button>

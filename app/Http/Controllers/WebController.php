@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Web;
 use App\Http\Controllers\Controller;
+use App\Traits\UploadImages;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
 {
+    use UploadImages;
     /**
      * Display a listing of the resource.
      *
@@ -38,9 +40,10 @@ class WebController extends Controller
      */
     public function store(Request $request)
     {
+        $path = $this->loadWebImage($request,'portfolio');
         Web::create([
             'WebName'=> $request->WebName,
-            'WebImage'=>$request->WebImage,
+            'WebImage'=>$path,
             'WebLinke'=> $request->WebLinke,
         ]);
         $Portfolio=Web::get();
@@ -81,9 +84,15 @@ class WebController extends Controller
     public function update(Request $request, $id)
     {
         $Portfolio=Web::findorfail($id);
+        if ($request->WebImage == ""){
+            $path = $Portfolio->WebImage;
+        }  else {
+
+            $path = $this->loadWebImage($request, 'portfolio');
+        }
         $Portfolio->update([
             'WebName'=> $request->WebName,
-            'WebImage'=>$request->WebImage,
+            'WebImage'=>$path,
             'WebLinke'=> $request->WebLinke,
         ]);
         return redirect()->route('admin.WEB.index');

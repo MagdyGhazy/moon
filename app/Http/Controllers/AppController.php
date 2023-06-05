@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\app;
 use App\Http\Controllers\Controller;
+use App\Traits\UploadImages;
 use Illuminate\Http\Request;
 
 class AppController extends Controller
 {
+    use UploadImages;
     /**
      * Display a listing of the resource.
      *
@@ -38,9 +40,11 @@ class AppController extends Controller
      */
     public function store(Request $request)
     {
+        $path = $this->loadAppImage($request,'portfolio');
+
         app::create([
             'AppName'=> $request->AppName,
-            'AppImage'=>$request->AppImage,
+            'AppImage'=>$path,
             'AppLink'=> $request->AppLink,
         ]);
         $Portfolio=app::get();
@@ -86,9 +90,15 @@ class AppController extends Controller
     public function update(Request $request, $id)
     {
         $Portfolio=app::findorfail($id);
+        if ($request->AppImage == ""){
+            $path = $Portfolio->AppImage;
+        }  else {
+
+            $path = $this->loadAppImage($request, 'portfolio');
+        }
         $Portfolio->update([
             'AppName'=> $request->AppName,
-            'AppImage'=>$request->AppImage,
+            'AppImage'=>$path,
             'AppLink'=> $request->AppLink,
         ]);
         return redirect()->route('admin.app.index');

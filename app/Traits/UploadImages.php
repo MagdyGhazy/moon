@@ -18,4 +18,13 @@ trait UploadImages
         return $path;
     }
 
+    public function loadAppImage(Request $request,$folderName){
+        $image=$request->file('AppImage')->getClientOriginalName();
+        $path=$request->file('AppImage')->storeAs($folderName,$image,'save');
+        return $path;
+    }public function loadWebImage(Request $request,$folderName){
+        $image=$request->file('WebImage')->getClientOriginalName();
+        $path=$request->file('WebImage')->storeAs($folderName,$image,'save');
+        return $path;
+    }
 }

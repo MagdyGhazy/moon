@@ -297,7 +297,7 @@
                   @foreach($app as $app)
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="{{$app->AppImage}}" class="img-fluid" alt="">
+              <img src="{{asset('img/'.$app->AppImage)}}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">{{$app->AppName}}</a></h4>
                 <p>App</p>
@@ -313,7 +313,7 @@
             @foreach($web as $web)
           <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.1s">
             <div class="portfolio-wrap">
-              <img src="{{$web->WebImage}}" class="img-fluid" alt="">
+              <img  src="{{asset('img/'.$web->WebImage)}}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">{{$web->WebName}}</a></h4>
                 <p>Web</p>

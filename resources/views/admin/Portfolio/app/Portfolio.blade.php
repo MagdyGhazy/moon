@@ -79,7 +79,7 @@
                                                 <?php $i++; ?>
                                                 <th scope="row">{{$i}}</th>
                                                 <td>{{$Portfolio->AppName}}</td>
-                                                <td>{{$Portfolio->AppImage}}</td>
+                                                <td style="width: 15%;text-align: center"><img src="{{asset('img/'.$Portfolio->AppImage)}}" class="img-fluid" alt=""></td>
                                                 <td>{{$Portfolio->AppLink}}</td>
 
                                                 <td>
