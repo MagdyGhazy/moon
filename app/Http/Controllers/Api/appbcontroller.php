@@ -30,7 +30,7 @@ class appbcontroller extends Controller
     public function store(Request $request){
 
 
-        $path = $this->loadWebImage($request, 'portfolio');
+        $path = $this->loadAppImage($request, 'portfolio');
 
         $team = app::create([
 
@@ -50,7 +50,7 @@ class appbcontroller extends Controller
         if ($request->image == "") {
             $path = $team->image;
         }else{
-            $path = $this->loadWebImage($request, 'portfolio');
+            $path = $this->loadAppImage($request, 'portfolio');
         }
         $team->update([
             'AppName'=> $request->AppName,
