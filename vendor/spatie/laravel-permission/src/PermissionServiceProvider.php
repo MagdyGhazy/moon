@@ -54,11 +54,11 @@ class PermissionServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/../config/permission.php' => config_path('permission.php'),
-        ], 'config');
+        ], 'permission-config');
 
         $this->publishes([
             __DIR__.'/../database/migrations/create_permission_tables.php.stub' => $this->getMigrationFileName('create_permission_tables.php'),
-        ], 'migrations');
+        ], 'permission-migrations');
     }
 
     protected function registerCommands()
@@ -162,8 +162,6 @@ class PermissionServiceProvider extends ServiceProvider
 
     /**
      * Returns existing migration file if found, else uses the current timestamp.
-     *
-     * @return string
      */
     protected function getMigrationFileName($migrationFileName): string
     {
