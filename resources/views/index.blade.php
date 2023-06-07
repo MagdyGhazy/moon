@@ -43,7 +43,7 @@
   <header id="header" class="fixed-top">
     <div class="container">
 
-      <div class="logo float-left">
+      <div class="float-left" style="width: 18%; height:15%">
 
         <a href="#intro" class="scrollto"> <img src="img/logo.png" alt="" class="img-fluid"></a>
       </div>
