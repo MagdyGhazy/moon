@@ -162,7 +162,7 @@
 {{--                                                        <div class="form-group" >--}}
 {{--                                                            <label  for="settings.has_source">{{ __('labels.fields.author_and_source') }}</label>--}}
 {{--                                                            <select class="form-control @error('settings.has_source') is-invalid @enderror" name="settings[has_source]" id="settings.has_source">--}}
-{{--                                                                @foreach(\App\Enums\SectionState::values() as $value)--}}
+{{--                                                                @foreach(\AppPortofile\Enums\SectionState::values() as $value)--}}
 {{--                                                                    <option value="{{$value}}" @if((int)old('value', $section->getSettings('has_source')) === $value) selected @endif> {{__('labels.enum.state.'.$value)}}</option>--}}
 {{--                                                                @endforeach--}}
 {{--                                                            </select>--}}
@@ -176,7 +176,7 @@
 {{--                                                        <div class="form-group" >--}}
 {{--                                                            <label  for="settings.has_terms">{{ __('labels.fields.terms') }}</label>--}}
 {{--                                                            <select class="form-control @error('settings.has_terms') is-invalid @enderror" name="settings[has_terms]" id="settings.has_terms">--}}
-{{--                                                                @foreach(\App\Enums\SectionState::values() as $value)--}}
+{{--                                                                @foreach(\AppPortofile\Enums\SectionState::values() as $value)--}}
 {{--                                                                    <option value="{{$value}}" @if((int)old('value',$section->getSettings('has_terms')) === $value) selected @endif> {{__('labels.enum.state.'.$value)}}</option>--}}
 {{--                                                                @endforeach--}}
 {{--                                                            </select>--}}

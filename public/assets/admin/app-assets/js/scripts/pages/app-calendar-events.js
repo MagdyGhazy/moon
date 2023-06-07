@@ -1,5 +1,5 @@
 /**
- * App Calendar Events
+ * AppPortofile Calendar Events
  */
 
 'use strict';

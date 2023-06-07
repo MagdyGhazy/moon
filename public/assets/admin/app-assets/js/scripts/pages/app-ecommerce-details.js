@@ -1,5 +1,5 @@
 //  File Name: app-ecommerce-details.js
-//  Description: App Ecommerce Details js.
+//  Description: AppPortofile Ecommerce Details js.
 //  ----------------------------------------------------------------------------------------------
 //  Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
 //  Author: PIXINVENT

@@ -1,5 +1,5 @@
 Licenses
-=
+========
 
 Good news! You may use Nette Framework under the terms of either
 the New BSD License or the GNU General Public License (GPL) version 2 or 3.

@@ -9,7 +9,7 @@ Nette Schema
 
 
 Introduction
-=====
+============
 
 A practical library for validation and normalization of data structures against a given schema with a smart & easy-to-understand API.
 
@@ -21,7 +21,7 @@ Installation:
 composer require nette/schema
 ```
 
-It requires PHP version 7.1 and supports PHP up to 8.1.
+It requires PHP version 7.1 and supports PHP up to 8.2.
 
 
 [Support Me](https://github.com/sponsors/dg)
