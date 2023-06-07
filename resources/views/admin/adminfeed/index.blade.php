@@ -80,7 +80,13 @@
                                             <td style="width: 10%">{{ $i }}</td>
                                             <td style="width: 20%">{{$user->name}}</td>
                                             <td style="width: 20%">{{$user->comment}}</td>
-                                            <td style="width: 15%;align-content: center"><img style="width: 40%" src="{{asset('img/'.$user->image)}}" class="img-fluid" alt=""></td>
+                                                <td style="width: 15%;align-content: center"><img style="width: 40%"
+                                                @if($user->image == null)
+                                                src="{{asset('assets/images/no_user.png')}}" class="testimonial-img" alt=""
+                                                @else
+                                                src="{{asset('img/'.$user->image)}}" class="testimonial-img" alt=""
+                                                @endif
+                                                ></td>
                                             <td style="width: 20%;align-content: center">
                                                 <div class="row wow fadeInUp" style="justify-content: right ">
                                                     <span>
