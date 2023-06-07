@@ -1,10 +1,10 @@
 Introduction
-=====
+============
 
 This library provides a way of avoiding usage of constructors when instantiating PHP classes.
 
 Installation
-=====
+============
 
 The suggested installation method is via `composer`_:
 
@@ -30,7 +30,7 @@ using the constructor or any API of the class itself:
     $user = $instantiator->instantiate(User::class);
 
 Contributing
-=====
+============
 
 -  Follow the `Doctrine Coding Standard`_
 -  The project will follow strict `object calisthenics`_
@@ -42,7 +42,7 @@ Contributing
    ``master``.
 
 Testing
-
+=======
 
 The PHPUnit version to be used is the one installed as a dev- dependency
 via composer:
@@ -55,7 +55,7 @@ Accepted coverage for new contributions is 80%. Any contribution not
 satisfying this requirement won’t be merged.
 
 Credits
-
+=======
 
 This library was migrated from `ocramius/instantiator`_, which has been
 donated to the doctrine organization, and which is now deprecated in

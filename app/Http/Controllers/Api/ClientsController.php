@@ -67,10 +67,14 @@ class ClientsController extends Controller
 
     public function destroy($id)
     {
-        $clients = Clients::findorfail($id)->delete();
+        $clients = Clients::find($id);
+
         if ($clients){
-            return $this->apiResponse( ClientResource::collection(Clients::get()),200,'client has been deleted');
+            $clients->delete();
+            return $this->apiResponse(ClientResource::collection(Clients::get()),200,'client has been deleted');
         }
-        return $this->apiResponse($clients,401,'not deleted');
+        return $this->apiResponse($clients,401,'Cannot Find To delete');
+
+
     }
 }

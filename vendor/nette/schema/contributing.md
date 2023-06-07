@@ -1,5 +1,5 @@
 How to contribute & use the issue tracker
-======
+=========================================
 
 Nette welcomes your contributions. There are several ways to help out:
 

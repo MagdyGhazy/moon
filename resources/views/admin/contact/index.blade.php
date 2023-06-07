@@ -59,24 +59,24 @@
                                     <table class="table">
                                         <thead>
                                         <tr>
-                                            <th scope="col"style="width: 10%">#</th>
-                                            <th scope="col"style="width: 20%">name</th>
-                                            <th scope="col"style="width: 20%">email</th>
-                                            <th scope="col"style="width: 10%">subject</th>
-                                            <th scope="col"style="width: 20%">message</th>
-                                            <th scope="col"style="width: 20%">Handle</th>
+                                            <th scope="col"style="width: 5%;text-align: center">#</th>
+                                            <th scope="col"style="width: 15%;text-align: center">name</th>
+                                            <th scope="col"style="width: 20%;text-align: center">email</th>
+                                            <th scope="col"style="width: 10%;text-align: center">subject</th>
+                                            <th scope="col"style="width: 30%;text-align: center">message</th>
+                                            <th scope="col"style="width: 20%;text-align: center">Handle</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                             <?php $i = 0; ?>
                                         @foreach($contacts as $contact)
                                                 <?php $i++; ?>
-                                            <td style="width: 10%">{{ $i }}</td>
-                                            <td style="width: 20%">{{$contact->name}}</td>
-                                            <td style="width: 20%">{{$contact->email}}</td>
-                                            <td style="width: 10%">{{$contact->subject}}</td>
-                                            <td style="width: 20%">{{$contact->message}}</td>
-                                            <td style="width: 20%">
+                                            <td style="width: 5%;align-content: center">{{ $i }}</td>
+                                            <td style="width: 15%;align-content: center">{{$contact->name}}</td>
+                                            <td style="width: 20%;align-content: center">{{$contact->email}}</td>
+                                            <td style="width: 10%;align-content: center">{{$contact->subject}}</td>
+                                            <td style="width: 30%;align-content: center">{{$contact->message}}</td>
+                                            <td style="width: 20%;align-content: center">
                                                 <div class="row wow fadeInUp" style="justify-content: right ">
 
 
