@@ -94,7 +94,6 @@
 
         <header class="section-header">
           <h3>About Us</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </header>
           @foreach($About as $Aboutt)
         <div class="row about-container">
@@ -181,7 +180,6 @@
 
         <header class="section-header">
           <h3>Services</h3>
-          <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
         </header>
 
         <div class="row">
@@ -207,7 +205,6 @@
       <div class="container">
         <header class="section-header">
           <h3>Why choose us?</h3>
-          <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
         </header>
 
         <div class="row row-eq-height justify-content-center">
@@ -410,7 +407,6 @@
       <div class="container">
         <div class="section-header">
           <h3>Team</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         </div>
 
         <div class="row">
@@ -501,7 +497,6 @@
 
         <div class="section-header">
           <h3>Our CLients</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque dere santome nida.</p>
         </div>
 
         <div class="row no-gutters clients-wrap clearfix wow fadeInUp" style="text-align: center">
